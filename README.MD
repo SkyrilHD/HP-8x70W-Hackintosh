@@ -11,7 +11,7 @@ This repo includes an OpenCore EFI for macOS Catalina on 8570W.
 Tested on:
 
 - Model: HP Elitebook 8570W
-- CPU: IIntel Core i7-3740QM
+- CPU: Intel Core i7-3740QM
 - GPU: NVIDIA Quadro K1000M
 - RAM: 16GB DDR3 1600Mhz
 - Storage: HP SSD 8700 250GB
@@ -31,7 +31,7 @@ Copy the EFI folder to your EFI partition... That's it.
 - Works ok...
 - no brightness control
 - no audio
-- no trackpad and keyboard support
+- trackpad and keyboard support
 
 # How to Install macOS Catalina
 
