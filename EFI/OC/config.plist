@@ -22,6 +22,14 @@
 				<key>Enabled</key>
 				<true/>
 			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>SSDT-LANCPRW.aml</string>
+				<key>Path</key>
+				<string>SSDT-LANCPRW.aml</string>
+				<key>Enabled</key>
+				<true/>
+			</dict>
 		</array>
 		<key>Delete</key>
 		<array>
