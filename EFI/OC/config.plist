@@ -32,14 +32,6 @@
 			</dict>
 			<dict>
 				<key>Comment</key>
-				<string>SSDT-UPRW.aml</string>
-				<key>Path</key>
-				<string>SSDT-UPRW.aml</string>
-				<key>Enabled</key>
-				<true/>
-			</dict>
-			<dict>
-				<key>Comment</key>
 				<string>SSDT-8x70.aml</string>
 				<key>Path</key>
 				<string>SSDT-8x70.aml</string>
