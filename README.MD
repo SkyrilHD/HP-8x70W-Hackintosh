@@ -13,27 +13,27 @@ Tested on:
 - GPU: NVIDIA Quadro K1000M
 - RAM: 16GB DDR3 1600Mhz
 - Storage: HP SSD 8700 250GB
-- WiFi & Bluetooth: Intel Centrino Advanced-N 6205 (doesn't support)
-- Software: macOS 10.15.4 Catalina
+- WiFi & Bluetooth: Azureware AW-CE123H (BCM94352HMB)
+- Software: macOS 10.15.5 Catalina
 
 ## What works?
 
-Booting into macOS Catalina
+- Boot
+- GPU acceleration
+- Ethernet
+- TrackPad (partially)
+- WiFi (incl. Handoff + AirDrop)
+- Audio
 
 ## What doesn't work?
 
-Currently, battery information does not work and since the 8570W does not have an iGPU and this laptop only has a K1000M, there is no brightness control.
+- battery readout
+- Since the 8570W does not have an iGPU and this laptop only has a K1000M, there is no brightness control.
+- TrackPad isn´t being recognised as a TrackPad + no Magic TrackPad 2 Emulation (scrolling works)
 
 ## Download and Install
 
 Copy the EFI folder to your EFI partition... That's it.
-
-## What to expect
-
-- Works ok...
-- no brightness control
-- audio works
-- trackpad and keyboard support
 
 ## How to Install macOS Catalina
 
@@ -43,8 +43,8 @@ sudo /Applications/Install\ macOS\ Catalina.app/Contents/Resources/createinstall
 
 After it is done copy the EFI folder to the EFI partition and install as usual. After it is installed mount the EFI of the installed OS and copy the EFI folder to its partition.
 
-If you want an OOTB-WiFi:
-You need to change your WiFi card to get your internet working. Buy it on eBay or on your trustworthy website and find a suitable card with the kexts.
+If you have the original Intel Centrino Wireless-N 6205 card:
+You need remove the broadcom kexts and replace them with Airportitlwm (use 1.2.0 debug) and IntelBluetoothFirmware to get both WiFi and Bluetooth working.
 
 ## Credits
 
@@ -53,5 +53,5 @@ Thanks to:
 - me (for wasting my time to write this, provide fixes and creating this EFI)
 - acidanthera (for making an awesome bootloader)
 - Rehabman (for fixing keyboard issues and providing patches for 8x70)
-- @FernsehSackDE (for the idea to do this because there were no downloads outside China :P)
-- @MacGen2 (for testing this on his 8570W)
+- [sha106b](https://github.com/sha106b) (for the idea to do this because there were no downloads outside China :P)
+- [HansHubertHass](https://github.com/HansHubertHass) (for testing this on his 8570W)
