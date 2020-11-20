@@ -53,5 +53,5 @@ Thanks to:
 - me (for wasting my time to write this, provide fixes and creating this EFI)
 - acidanthera (for making an awesome bootloader)
 - Rehabman (for fixing keyboard issues and providing patches for 8x70)
-- [sha106b](https://github.com/sha106b) (for the idea to do this because there were no downloads outside China :P)
+- [TECHNIKVERBOT](https://github.com/TECHNIKVERBOT) (for the idea to do this because there were no downloads outside China :P)
 - [HansHubertHass](https://github.com/HansHubertHass) (for testing this on his 8570W)
