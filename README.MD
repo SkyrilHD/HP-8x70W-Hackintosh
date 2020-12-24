@@ -1,4 +1,4 @@
-# HP 8570W Hackintosh
+# HP 8570W Hackintosh (discontinued)
 
 This repo includes an OpenCore EFI for 8570W.
 
