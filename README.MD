@@ -16,7 +16,7 @@ Tested on:
 
 Model | HP Elitebook 8570W
 --- | ---
-CPU | Intel Core i7-3740QM
+CPU | Intel Core i7-3720QM
 GPU | NVIDIA Quadro K1000M
 RAM | 16GB DDR3 1600Mhz
 Storage | HP SSD 8700 250GB
@@ -56,7 +56,7 @@ There are two ways you can install Catalina:
 After you have created a bootable Installer, copy the EFI folder to the EFI partition and install as usual. After the installation, mount the EFI partition of the installed OS and copy the EFI folder to its partition.
 
 If you have the original Intel Centrino Wireless-N 6205 card:
-You need remove the broadcom kexts and replace them with Airportitlwm and IntelBluetoothFirmware to get both WiFi and Bluetooth working. But for the full macOS experience with AirDrop, Handoff and all of that, replace the Intel WiFi card.
+You need remove the broadcom kexts and replace them with [Airportitlwm](https://github.com/OpenIntelWireless/itlwm/releases/tag/v1.2.0) and [IntelBluetoothFirmware](https://github.com/OpenIntelWireless/IntelBluetoothFirmware/releases/tag/1.1.2) to get both WiFi and Bluetooth working. But for the full macOS experience with AirDrop, Handoff and all of that, replace the Intel WiFi card.
 
 ## Credits
 
