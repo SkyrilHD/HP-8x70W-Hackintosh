@@ -48,7 +48,7 @@ Software | macOS 10.15.7 Catalina
 - Power Management
 - (For NVIDIA) Since the 8570W does not have an iGPU and this laptop only has a K1000M, there is no brightness control.
 - SD-Card
-- Trackpad isn't showing up in the macOS settings page when there's no battery readout
+- Trackpad won't show up in the macOS settings page when there's no battery readout
 - TrackPoint
 
 ## Download and Install
