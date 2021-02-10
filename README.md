@@ -32,6 +32,7 @@ Storage | HP SSD 8700 250GB
 WiFi & Bluetooth | Azureware AW-CE123H (BCM94352HMB)
 Display | TN-Panel
 Software | macOS 10.15.7 Catalina
+BIOS-Version | F.31 (from 2nd October 2012)
 
 ## What works?
 
