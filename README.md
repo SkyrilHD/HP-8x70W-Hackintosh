@@ -77,4 +77,4 @@ Thanks to:
 - acidanthera (for making an awesome bootloader)
 - Rehabman (for fixing keyboard issues and providing patches for 8x70)
 - [TECHNIKVERBOT](https://github.com/TECHNIKVERBOT) (for the idea to do this because there were no downloads outside of China :P)
-- [HansHubertHass](https://github.com/HansHubertHass) (for testing this on his 8570W and buying some hardware so we can resume development again)
+- [HansHubertHass](https://github.com/HansHubertHass) and [Bautheile](https://github.com/Bautheile) (for being our testers)
