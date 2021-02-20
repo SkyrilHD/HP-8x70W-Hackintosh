@@ -76,7 +76,7 @@ Use GenSMBIOS (https://github.com/corpnewt/GenSMBIOS) to generate a serial for M
 
 use PlistEdit Pro or any plist editor to manually enter the details in the config where it sais YOUR OWN STUFF HERE (as shown in photo) (SystemSerialNumber, MLB, and UUID)
 
-![Screenshot 2021-02-21 001529.jpg](Screenshot 2021-02-21 001529.jpg)
+![Screenshot 2021-02-21 001529.jpg](https://raw.githubusercontent.com/SkyrilHD/HP-8570W-Hackintosh/10.15_0.6.6/Screenshot%202021-02-21%20001529.jpg)
 
 You should also edit your ROM to match the MAC address of your ethernet adapter.
 
