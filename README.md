@@ -25,16 +25,15 @@ Italic: not confirmed
 
 Tested on:
 
-Model | HP Elitebook 8570W
---- | ---
-CPU | Intel Core i7-3720QM
-GPU | NVIDIA Quadro K1000M
-RAM | 16GB DDR3 1600Mhz
-Storage | HP SSD 8700 250GB
-WiFi & Bluetooth | Azureware AW-CE123H (BCM94352HMB)
-Display | TN-Panel
-Software | macOS 10.15.7 Catalina
-BIOS-Version | F.31 (from 2nd October 2012)
+| Specs | Laptop 1 ([@HansHubertHass](https://github.com/HansHubertHass)) | Laptop 2 ([@Bautheile](https://github.com/Bautheile)) |
+| -- | -- | -- |
+| CPU | Intel Core i7-3720QM | Intel Core i7-3840QM |
+| GPU | Nvidia Quadro K1000M  | |
+| RAM | 16 GB 1600 MHz DDR3  | 32 GB 1600 MHz DDR3 |
+| Screen | 1080p TN-Panel  | |
+| WiFi & Bluetooth | Azureware AW-CE123H (BCM94352HMB) | BCM943224HMS |
+| OS | macOS 10.15.7 Catalina | |
+| BIOS | F.31 | F.61 |
 
 ## What works?
 
