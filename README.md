@@ -70,6 +70,17 @@ After you have created a bootable Installer, copy the EFI folder to the EFI part
 If you have the original Intel Centrino Wireless-N 6205 card:
 You need remove the broadcom kexts and replace them with [Airportitlwm](https://github.com/OpenIntelWireless/itlwm/releases/tag/v1.2.0) and [IntelBluetoothFirmware](https://github.com/OpenIntelWireless/IntelBluetoothFirmware/releases/tag/1.1.2) to get both WiFi and Bluetooth working. But for the full macOS experience with AirDrop, Handoff and all of that, replace the Intel WiFi card.
 
+## Generating your own serial and Editing ROM
+
+Use GenSMBIOS (https://github.com/corpnewt/GenSMBIOS) to generate a serial for MacBookPro9,1
+
+use PlistEdit Pro or any plist editor to manually enter the details in the config where it sais YOUR OWN STUFF HERE (as shown in photo) (SystemSerialNumber, MLB, and UUID)
+
+![Screenshot 2021-02-21 001529.jpg](Screenshot 2021-02-21 001529.jpg)
+
+You should also edit your ROM to match the MAC address of your ethernet adapter.
+
+
 ## Credits
 
 Thanks to:

@@ -1081,7 +1081,7 @@
 			<key>MaxBIOSVersion</key>
 			<false/>
 			<key>MLB</key>
-			<string>C02310700GUDY3VFB</string>
+			<string>YOUR OWN STUFF HERE</string>
 			<key>ProcessorType</key>
 			<integer>0</integer>
 			<key>ROM</key>
@@ -1091,11 +1091,11 @@
 			<key>SystemMemoryStatus</key>
 			<string>Auto</string>
 			<key>SystemProductName</key>
-			<string>MacBookPro10,1</string>
+			<string>MacBookPro9,1</string>
 			<key>SystemSerialNumber</key>
-			<string>C02KD07NDKQ1</string>
+			<string>YOUR OWN STUFF HERE</string>
 			<key>SystemUUID</key>
-			<string>20B55FB0-0E63-4D12-B3F3-52914D8E3A82</string>
+			<string>YOUR OWN STUFF HERE</string>
 		</dict>
 		<key>UpdateDataHub</key>
 		<true/>
