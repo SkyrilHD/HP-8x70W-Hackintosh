@@ -72,9 +72,9 @@ You need remove the broadcom kexts and replace them with [Airportitlwm](https://
 
 ## Generating your own serial
 
-Use GenSMBIOS (https://github.com/corpnewt/GenSMBIOS) to generate a serial for MacBookPro9,1
+Use GenSMBIOS (https://github.com/corpnewt/GenSMBIOS) to generate a serial for MacBookPro9,1.
 
-use PlistEdit Pro or any plist editor to manually enter the details in the config where it sais YOUR OWN STUFF HERE (as shown in photo) (SystemSerialNumber, MLB, and UUID)
+Use PlistEdit Pro or any plist editor to manually enter the details in the config where it says "YOUR OWN STUFF HERE" (as shown in photo) (SystemSerialNumber, MLB, and UUID)
 
 ![Screenshot 2021-02-21 001529.jpg](https://raw.githubusercontent.com/SkyrilHD/HP-8570W-Hackintosh/10.15_0.6.6/Screenshot%202021-02-21%20001529.jpg)
 
