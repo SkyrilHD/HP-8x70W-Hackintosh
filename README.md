@@ -43,6 +43,7 @@ Tested on:
 - Keyboard + Trackpad (incl. Magic TrackPad 2 emulation)
 - WiFi (incl. Handoff + AirDrop)
 - Audio
+- Docking Station (USB + DVI-D)
 
 ## What doesn't work?
 
@@ -52,6 +53,7 @@ Tested on:
 - SD-Card
 - Trackpad won't show up in the macOS settings page when there's no battery readout
 - TrackPoint
+- Docking Station Audio
 
 ## Download and Install
 
@@ -78,7 +80,7 @@ Use PlistEdit Pro or any plist editor to manually enter the details in the confi
 
 ![Screenshot 2021-02-21 001529.jpg](https://raw.githubusercontent.com/SkyrilHD/HP-8570W-Hackintosh/10.15_0.6.6/Screenshot%202021-02-21%20001529.jpg)
 
-You should also edit your ROM to match the MAC address of your ethernet adapter.
+You should also add your ethernet adapter's MAC address in the ROM section.
 
 
 ## Credits
