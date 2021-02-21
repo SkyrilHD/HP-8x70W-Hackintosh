@@ -44,6 +44,7 @@ Tested on:
 - WiFi (incl. Handoff + AirDrop)
 - Audio
 - Docking Station (USB + DVI-D)
+- ExpressCard
 
 ## What doesn't work?
 
