@@ -35,6 +35,8 @@ Tested on:
 | OS | macOS 10.15.7 Catalina | |
 | BIOS | F.31 | F.61 |
 
+If you're on a later BIOS and have any issues trying to boot or whatever, we recommend downgrading to F.61.
+
 ## What works?
 
 - Boot
