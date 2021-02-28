@@ -47,6 +47,7 @@ If you're on a later BIOS and have any issues trying to boot or whatever, we rec
 - Audio
 - Docking Station (USB + DVI-D)
 - ExpressCard
+- Sleep
 
 ## What doesn't work?
 
@@ -57,6 +58,7 @@ If you're on a later BIOS and have any issues trying to boot or whatever, we rec
 - Trackpad won't show up in the macOS settings page when there's no battery readout
 - TrackPoint
 - Docking Station Audio
+- Sleep through closing the lid
 
 ## Download and Install
 
