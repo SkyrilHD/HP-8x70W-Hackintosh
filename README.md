@@ -48,14 +48,13 @@ If you're on a later BIOS and have any issues trying to boot or whatever, we rec
 - Docking Station (USB + DVI-D)
 - ExpressCard
 - Sleep
+- Battery readout
 
 ## What doesn't work?
 
-- Battery readout
 - Power Management
 - (For NVIDIA) Since the 8570W does not have an iGPU and this laptop only has a K1000M, there is no brightness control.
 - SD-Card
-- Trackpad won't show up in the macOS settings page when there's no battery readout
 - TrackPoint
 - Docking Station Audio
 - Sleep through closing the lid
