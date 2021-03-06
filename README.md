@@ -39,16 +39,16 @@ If you're on a later BIOS and have any issues trying to boot or whatever, we rec
 
 ## What works?
 
-- Boot
-- GPU acceleration
-- Ethernet
-- Keyboard + Trackpad (incl. Magic TrackPad 2 emulation)
-- WiFi (incl. Handoff + AirDrop)
 - Audio
-- Docking Station (USB + DVI-D)
-- ExpressCard
-- Sleep
 - Battery readout
+- Boot
+- Docking Station (USB + DVI-D)
+- Ethernet
+- ExpressCard
+- GPU acceleration
+- Keyboard + Trackpad (incl. Magic TrackPad 2 emulation)
+- Sleep
+- WiFi (incl. Handoff + AirDrop)
 
 ## What doesn't work?
 
