@@ -19,6 +19,7 @@ This repo includes an OpenCore EFI for 8570W.
 | AMD FirePro M4000 | DreamColor 2 | _No_ |
 
 Since users of the DreamColor screen can't use any of the stock GPUs: There's the possibility of using a FirePro W5170M, which uses a proper eDP display signal, thus making the internal screen + backlight control work under macOS.
+If anyone uses that GPU in their 8570W, let us know.
 
 Bold: confirmed working
 
