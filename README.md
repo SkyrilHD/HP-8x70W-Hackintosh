@@ -91,16 +91,6 @@ You need remove the broadcom kexts and replace them with [Airportitlwm](https://
 
 Recommended WiFi cards: Azureware AW-CE123H, DW1550, BCM943224HMS, DW1520
 
-## Generating your own serial
-
-Use GenSMBIOS (https://github.com/corpnewt/GenSMBIOS) to generate a serial for MacBookPro9,1.
-
-Use PlistEdit Pro or any plist editor to manually enter the details in the config where it says "YOUR OWN STUFF HERE" (as shown in photo) (SystemSerialNumber, MLB, and UUID)
-
-![Screenshot 2021-02-21 001529.jpg](https://raw.githubusercontent.com/SkyrilHD/HP-8570W-Hackintosh/10.15_0.6.6/Screenshot%202021-02-21%20001529.jpg)
-
-You should also add your ethernet adapter's MAC address in the ROM section.
-
 ## BIOS versions
 
 I decided to include this topic in the README instead of my GitHub Pages for visibility. Basically due to the fact that HP is preventing users from downgrade the BIOS, I recommend sticking to the oldest version if possible. For now, F.31 and F.61 are confirmed working. I would like to complete my table and it can be viewed [here](https://github.com/SkyrilHD/HP-8570W-Hackintosh/issues/10). Contributing to this project will help a ton :). If you want to know whether or not your BIOS is confirmed working, you can check [here](https://github.com/SkyrilHD/HP-8570W-Hackintosh/issues?q=label%3ABIOS+). If you cannot find your BIOS version, please try the EFI out and provide feedback [here](https://github.com/SkyrilHD/HP-8570W-Hackintosh/issues/new/choose).
