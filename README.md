@@ -10,7 +10,7 @@ Please try to keep the BIOS version as low as possible! New BIOS versions block 
 
 This repo includes an OpenCore EFI for 8570W.
 
-This repo might get slower updates as I have little free time to continue this project. 
+This repo may get updated more slowly as I have little free time to continue this project. 
 
 ### We're also looking for 8770W users, so if anyone has one of these, let us know!
 
@@ -90,6 +90,10 @@ If you have the original Intel Centrino Wireless-N 6205 card:
 You need remove the broadcom kexts and replace them with [Airportitlwm](https://github.com/OpenIntelWireless/itlwm/releases/tag/v1.2.0) and [IntelBluetoothFirmware](https://github.com/OpenIntelWireless/IntelBluetoothFirmware/releases/tag/1.1.2) to get both WiFi and Bluetooth working. But for the full macOS experience with AirDrop, Handoff and all of that, replace the Intel WiFi card with a supported Broadcom one.
 
 Recommended WiFi cards: Azureware AW-CE123H, DW1550, BCM943224HMS, DW1520
+
+## BIOS settings
+
+// TO-DO
 
 ## BIOS versions
 
