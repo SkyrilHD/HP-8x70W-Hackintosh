@@ -4,9 +4,13 @@
 [![GitHub release](https://img.shields.io/github/release/SkyrilHD/HP-8570W-Hackintosh.svg)](https://github.com/SkyrilHD/HP-8570W-Hackintosh/releases/)
 [![GitHub issues](https://img.shields.io/github/issues/SkyrilHD/HP-8570W-Hackintosh.svg)](https://github.com/SkyrilHD/HP-8570W-Hackintosh/issues/)
 
-### Before you give this EFI a try, make sure you read [this](https://github.com/SkyrilHD/HP-8570W-Hackintosh/issues/10)!
+### Before you give this EFI a try, make sure you read [this](https://github.com/SkyrilHD/HP-8570W-Hackintosh/issues/10) and [this](#BIOS-versions)!
+
+Please try to keep the BIOS version as low as possible! New BIOS versions block the downgrade.
 
 This repo includes an OpenCore EFI for 8570W.
+
+This repo might get slower updates as I have little free time to continue this project. 
 
 ### We're also looking for 8770W users, so if anyone has one of these, let us know!
 
@@ -15,7 +19,7 @@ This repo includes an OpenCore EFI for 8570W.
 | GPU | Display | Supported? | Additional notes |
 | :-----: | :-----: | :-----: | :-----: |
 | NVIDIA Quadro K1000M/K2000M | TN-Panel | **Yes** | 1 |
-| AMD FirePro M4000 | TN-Panel | _Testing_ | 2 |
+| AMD FirePro M4000 | TN-Panel | _Unknown_ | 2 |
 | NVIDIA Quadro K1000M/K2000M | DreamColor 2 | _No_ | 3 |
 | AMD FirePro M4000 | DreamColor 2 | _No_ | 3 |
 
@@ -96,6 +100,10 @@ Use PlistEdit Pro or any plist editor to manually enter the details in the confi
 ![Screenshot 2021-02-21 001529.jpg](https://raw.githubusercontent.com/SkyrilHD/HP-8570W-Hackintosh/10.15_0.6.6/Screenshot%202021-02-21%20001529.jpg)
 
 You should also add your ethernet adapter's MAC address in the ROM section.
+
+## BIOS versions
+
+I decided to include this topic in the README instead of my GitHub Pages for visibility. Basically due to the fact that HP is preventing users from downgrade the BIOS, I recommend sticking to the oldest version if possible. For now, F.31 and F.61 are confirmed working. I would like to complete my table and it can be viewed [here](https://github.com/SkyrilHD/HP-8570W-Hackintosh/issues/10). Contributing to this project will help a ton :). If you want to know whether or not your BIOS is confirmed working, you can check [here](https://github.com/SkyrilHD/HP-8570W-Hackintosh/issues?q=label%3ABIOS+). If you cannot find your BIOS version, please try the EFI out and provide feedback [here](https://github.com/SkyrilHD/HP-8570W-Hackintosh/issues/new/choose).
 
 
 ## Credits
