@@ -42,7 +42,8 @@ Tested on:
 | GPU | Nvidia Quadro K1000M  | |
 | RAM | 16 GB 1600 MHz DDR3  | 32 GB 1600 MHz DDR3 |
 | Screen | 1080p TN-Panel  | |
-| WiFi & Bluetooth | Azureware AW-CE123H (BCM94352HMB) | BCM943224HMS |
+| WiFi | Azureware AW-CE123H (BCM94352HMB) | BCM943224HMS (WiFi-only card) |
+| Bluetooth | HP BCM920702MD |
 | OS | macOS 10.15.7 Catalina | |
 | BIOS | F.31 | F.61 |
 
@@ -84,12 +85,16 @@ There are two ways you can install Catalina:
 
 After you have created a bootable Installer, copy the EFI folder to the EFI partition and install as usual. After the installation, mount the EFI partition of the installed OS and copy the EFI folder to its partition.
 
+## Bluetooth
+
+As the stock WiFi cards don't have Bluetooth built-in, HP uses a dedicated broadcom bluetooth module which works fine under macOS. If you have a wifi card with bluetooth built-in and wish to use that instead, unplug the bluetooth module from the laptop and isolate Pin 51 on the WiFi card.
+
 ## WiFi
 
-If you have the original Intel Centrino Wireless-N 6205 card:
-You need remove the broadcom kexts and replace them with [Airportitlwm](https://github.com/OpenIntelWireless/itlwm/releases/tag/v1.2.0) and [IntelBluetoothFirmware](https://github.com/OpenIntelWireless/IntelBluetoothFirmware/releases/tag/1.1.2) to get both WiFi and Bluetooth working. But for the full macOS experience with AirDrop, Handoff and all of that, replace the Intel WiFi card with a supported Broadcom one.
+If you have the stock Intel cards:
+You need remove AirportBrcmFixup.kext and replace it with [Airportitlwm](https://github.com/OpenIntelWireless/itlwm/releases/tag/v1.2.0) to get WiFi working. But for the full macOS experience with AirDrop, Handoff and all of that, replace the Intel WiFi card with a supported Broadcom one.
 
-Recommended WiFi cards: Azureware AW-CE123H, DW1550, BCM943224HMS, DW1520
+Recommended WiFi cards: Azureware AW-CE123H, DW1550, BCM943224HMS (no Bluetooth), DW1520 (no Bluetooth)
 
 ## BIOS settings
 
