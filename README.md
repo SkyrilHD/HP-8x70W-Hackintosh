@@ -92,7 +92,7 @@ Use GenSMBIOS (https://github.com/corpnewt/GenSMBIOS) to generate a serial for M
 
 use PlistEdit Pro or any decent plist editor to manually enter the details in the following empty sections of the config (as shown in photo): (SystemSerialNumber, MLB, and UUID)
 
-![SMBIOS.jpg](SMBIOS.jpg)
+![SMBIOS](https://user-images.githubusercontent.com/28839925/115998080-e3085500-a5e5-11eb-81f9-4f990165afa7.mp4)
 
 You should also edit your ROM to match the MAC address of your ethernet adapter.
 
