@@ -90,11 +90,11 @@ After you have created a bootable Installer, copy the EFI folder to the EFI part
 
 Use GenSMBIOS (https://github.com/corpnewt/GenSMBIOS) to generate a serial for MacBookPro9,1
 
-use PlistEdit Pro or any decent plist editor to manually enter the details in the following empty sections of the config (as shown in photo): (SystemSerialNumber, MLB, and UUID)
+use PlistEdit Pro or any decent plist editor to manually enter the details in the following sections of the config (as shown in the video): (SystemSerialNumber, MLB, and UUID)
 
-![SMBIOS](https://user-images.githubusercontent.com/28839925/115998080-e3085500-a5e5-11eb-81f9-4f990165afa7.mp4)
+https://user-images.githubusercontent.com/59102649/116117179-3ea51200-a6bc-11eb-8a18-a03f7bb5bf1d.mp4
 
-You should also edit your ROM to match the MAC address of your ethernet adapter.
+You should also put in your ethernet adapter's MAC address into the ROM section.
 
 ## Bluetooth
 
