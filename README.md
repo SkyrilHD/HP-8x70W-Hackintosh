@@ -109,7 +109,43 @@ Recommended WiFi cards: Azureware AW-CE123H, DW1550, BCM943224HMS (no Bluetooth)
 
 ## BIOS settings
 
-// TO-DO
+***System Configuration Menu***
+
+**Boot Options**
+
+* SecureBoot: Disabled
+
+* Boot Mode: UEFI Hybrid (with CSM)
+
+**Device Configurations**
+    
+* SATA Device Mode: AHCI
+
+* Wake on USB: Disabled
+
+* Virtualization Technology: Enabled
+
+* Virtualization Technology for Directed I/O: Disabled
+
+* TXT Technology: Disabled
+
+* Intel HT Technology: Enabled
+
+**Built-in Device Options**
+    
+* LAN/WLAN Switching: Disabled
+
+* Fingerprint Device: Disabled
+
+**Port Options**
+    
+* Serial Port: Disabled
+
+* Parallel Port: Disabled
+
+* Flash media reader: Disabled (FOR NOW)
+
+* Smart Card: Disabled
 
 ## BIOS versions
 
