@@ -60,13 +60,13 @@ If you're on a later BIOS and have any issues trying to boot or whatever, we rec
 - GPU acceleration
 - Keyboard + Trackpad (incl. Magic TrackPad 2 emulation)
 - Sleep
+- Sleep through closing the lid
 - WiFi (incl. Handoff + AirDrop)
 - (NVIDIA) Internal Displays shows as internal [Learn more](#NVIDIA-Patches)
 
 ## What doesn't work?
 
 - (For NVIDIA) Since the 8570W does not have an iGPU and this laptop only has a K1000M, there is no brightness control.
-- Sleep through closing the lid
 - Power Management
 - SD-Card
 - TrackPoint
