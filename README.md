@@ -105,7 +105,7 @@ As the stock WiFi cards don't have Bluetooth built-in, HP uses a dedicated broad
 If you have the stock Intel cards:
 You need remove AirportBrcmFixup.kext and replace it with [Airportitlwm](https://github.com/OpenIntelWireless/itlwm/releases) to get WiFi working. But for the full macOS experience with AirDrop, Handoff and all of that, replace the Intel WiFi card with a supported Broadcom one.
 
-Recommended WiFi cards: Azureware AW-CE123H, Dell DW1550, HP TPC-Q013, Lenovo Lite-On WCBN606BH
+Recommended WiFi cards: Azureware AW-CE123H, Dell DW1550, Lenovo Lite-On WCBN606BH
 
 ## BIOS settings
 
