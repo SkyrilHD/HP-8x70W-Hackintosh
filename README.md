@@ -98,14 +98,14 @@ You should also put in your ethernet adapter's MAC address into the ROM section.
 
 ## Bluetooth
 
-As the stock WiFi cards don't have Bluetooth built-in, HP uses a dedicated broadcom bluetooth module which works fine under macOS. If you have a wifi card with bluetooth built-in and wish to use that instead, unplug the bluetooth module from the laptop and isolate Pin 51 on the WiFi card.
+As the stock WiFi cards don't have Bluetooth built-in, HP uses a dedicated broadcom bluetooth module which works fine under macOS.
 
 ## WiFi
 
 If you have the stock Intel cards:
 You need remove AirportBrcmFixup.kext and replace it with [Airportitlwm](https://github.com/OpenIntelWireless/itlwm/releases) to get WiFi working. But for the full macOS experience with AirDrop, Handoff and all of that, replace the Intel WiFi card with a supported Broadcom one.
 
-Recommended WiFi cards: Azureware AW-CE123H, DW1550, BCM943224HMS (no Bluetooth), DW1520 (no Bluetooth)
+Recommended WiFi cards: Azureware AW-CE123H, Dell DW1550, HP TPC-Q013, Lenovo Lite-On WCBN606BH
 
 ## BIOS settings
 
