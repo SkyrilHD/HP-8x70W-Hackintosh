@@ -10,8 +10,6 @@ Please try to keep the BIOS version as low as possible! Newer BIOS versions bloc
 
 This repo includes an OpenCore EFI for 8570W.
 
-This repo may get updated more slowly as I have little free time to continue this project. 
-
 ### We're also looking for 8770W users, so if anyone has one of these, let us know!
 
 ### EFI Compatibility list:
