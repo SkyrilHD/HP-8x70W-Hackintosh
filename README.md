@@ -62,7 +62,7 @@ If you're on a later BIOS and have any issues trying to boot or whatever, we rec
 - Sleep
 - Sleep through closing the lid
 - WiFi (incl. Handoff + AirDrop)
-- (NVIDIA) Internal Displays shows as internal [Learn more](#NVIDIA-Patches)
+- (NVIDIA) Internal Display shows as internal [Learn more](#NVIDIA-Patches)
 
 ## What doesn't work?
 
