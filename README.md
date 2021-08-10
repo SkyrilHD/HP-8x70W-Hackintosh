@@ -66,7 +66,7 @@ If you're on a later BIOS and have any issues trying to boot or whatever, we rec
 
 ## What doesn't work?
 
-- (For NVIDIA) Since the 8570W does not have an iGPU and this laptop only has a K1000M, there is no brightness control.
+- (NVIDIA) Since the 8570W does not have an iGPU and this laptop only has a K1000M, there is no brightness control.
 - Power Management
 - SD-Card
 - TrackPoint
