@@ -6,9 +6,7 @@
 
 ### Before you give this EFI a try, make sure you read [this](https://github.com/SkyrilHD/HP-8570W-Hackintosh/issues/10), [this](#BIOS-versions) and [this](#Generating-your-own-serial-and-Editing-ROM)!
 
-This repo includes an OpenCore EFI for 8570W.
-
-### We're also looking for 8770W users, so if anyone has one of these, let us know!
+This repo includes an OpenCore EFI for 8570W. If anyone has an 8770W, we would like to hear a feedback [here](https://github.com/SkyrilHD/HP-8570W-Hackintosh/issues/14).
 
 ### EFI Compatibility list:
 
