@@ -6,8 +6,6 @@
 
 ### Before you give this EFI a try, make sure you read [this](https://github.com/SkyrilHD/HP-8570W-Hackintosh/issues/10), [this](#BIOS-versions) and [this](#Generating-your-own-serial-and-Editing-ROM)!
 
-Please try to keep the BIOS version as low as possible! Newer BIOS versions block downgrading.
-
 This repo includes an OpenCore EFI for 8570W.
 
 ### We're also looking for 8770W users, so if anyone has one of these, let us know!
@@ -44,8 +42,6 @@ Tested on:
 | Bluetooth | HP BCM920702MD |
 | OS | macOS 10.15.7 Catalina | |
 | BIOS | F.31 | F.61 |
-
-If you're on a later BIOS and have any issues trying to boot or whatever, we recommend downgrading to F.61.
 
 ## What works?
 
