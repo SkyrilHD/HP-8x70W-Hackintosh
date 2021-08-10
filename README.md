@@ -152,7 +152,7 @@ Recommended WiFi cards: Azureware AW-CE123H, Dell DW1550, Lenovo Lite-On WCBN606
 I decided to include this topic in the README instead of my GitHub Pages for visibility. Basically due to the fact that HP is preventing users from downgrade the BIOS, I recommend sticking to the oldest version if possible. For now, F.31, F.61 and F.71 (currently latest version) are confirmed working. I would like to complete my table and it can be viewed [here](https://github.com/SkyrilHD/HP-8570W-Hackintosh/issues/10). Contributing to this project will help a ton :). If you want to know whether or not your BIOS is confirmed working, you can check [here](https://github.com/SkyrilHD/HP-8570W-Hackintosh/issues?q=label%3ABIOS+). If you cannot find your BIOS version, please try the EFI out and provide feedback [here](https://github.com/SkyrilHD/HP-8570W-Hackintosh/issues/new/choose).
 
 ## NVIDIA Patches
-Starting with v4.3.13, I've added patches for NVIDIA GPUs to enable "Internal Display" in "About This Mac". Unfortunately, the backlight control still doesn't work as the K1000M is limited. Therefore it is deactivated in "System Preferences". Information on how to activate these patches can be found at this [link](https://github.com/SkyrilHD/HP-8570W-Hackintosh/issues/1#issuecomment-819961384).
+Starting with v4.3.13, patches for NVIDIA GPUs have been added to enable "Internal Display" in "About This Mac". Unfortunately, the backlight control still doesn't work as the K1000M is limited. Therefore it is deactivated in "System Preferences". Information on how to activate these patches can be found at this [link](https://github.com/SkyrilHD/HP-8570W-Hackintosh/issues/1#issuecomment-819961384).
 
 ## Credits
 
