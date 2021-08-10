@@ -54,6 +54,7 @@ If you're on a later BIOS and have any issues trying to boot or whatever, we rec
 - Audio
 - Battery readout
 - Boot
+- Broadcom WiFi (incl. Handoff + AirDrop)
 - Docking Station (USB + DVI-D)
 - Ethernet
 - ExpressCard
@@ -61,7 +62,6 @@ If you're on a later BIOS and have any issues trying to boot or whatever, we rec
 - Keyboard + Trackpad (incl. Magic TrackPad 2 emulation)
 - Sleep
 - Sleep through closing the lid
-- WiFi (incl. Handoff + AirDrop)
 - (NVIDIA) Internal Display shows as internal [Learn more](#NVIDIA-Patches)
 
 ## What doesn't work?
