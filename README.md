@@ -52,6 +52,7 @@ Tested on:
 - ExpressCard
 - GPU acceleration
 - Keyboard + Trackpad (incl. Magic TrackPad 2 emulation)
+- SD-Card
 - Sleep
 - Sleep through closing the lid
 - (NVIDIA) Internal Display shows as internal [Learn more](#NVIDIA-Patches)
@@ -60,7 +61,6 @@ Tested on:
 
 - (NVIDIA) Since the 8570W does not have an iGPU and this laptop only has a K1000M, there is no brightness control.
 - Power Management
-- SD-Card
 - TrackPoint
 - Docking Station Audio
 
