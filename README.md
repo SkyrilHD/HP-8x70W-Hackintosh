@@ -135,7 +135,7 @@ Recommended WiFi cards: Azureware AW-CE123H, Dell DW1550, Lenovo Lite-On WCBN606
 
 * Parallel Port: Disabled
 
-* Flash media reader: Disabled (FOR NOW)
+* Flash media reader: Enabled
 
 * Smart Card: Disabled
 
