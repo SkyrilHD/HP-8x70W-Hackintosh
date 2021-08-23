@@ -55,13 +55,13 @@ Tested on:
 - SD-Card
 - Sleep
 - Sleep through closing the lid
+- TrackPoint
 - (NVIDIA) Internal Display shows as internal [Learn more](#NVIDIA-Patches)
 
 ## What doesn't work?
 
 - (NVIDIA) Since the 8570W does not have an iGPU and this laptop only has a K1000M, there is no brightness control.
 - Power Management
-- TrackPoint
 - Docking Station Audio
 
 ## Download and Install
