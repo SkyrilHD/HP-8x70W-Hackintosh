@@ -23,7 +23,7 @@ Italic: not confirmed
 
 1: Brightness control does NOT work
 
-2: add `radpg=15` as boot-arg
+2: add `radpg=15` as boot-arg & read information [here](https://github.com/SkyrilHD/HP-8570W-Hackintosh/discussions/20)
 
 3: Since users of the DreamColor screen can't use any of the stock GPUs: There's the possibility of using a FirePro W5170M or WX4170M, which uses a proper eDP display signal, thus making the internal screen + backlight control work under macOS. Note: You won't be able to use any of the TN panels as these newer GPUs don't give out any LVDS signals. And on the WX4170M, you won't be able to control the GPU fans. If anyone uses any of those GPUs in their 8570W, let us know, so we can test.
 
