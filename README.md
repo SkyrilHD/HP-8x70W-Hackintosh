@@ -10,6 +10,7 @@ This repo includes an OpenCore EFI for 8570W. If anyone has an 8770W, we would l
 
 ### This EFI only works on NVIDIA GPUs and TN-Panel. DreamColor will not be supported!
 
+AMD FirePro M4000 users can check [here](https://github.com/SkyrilHD/HP-8570W-Hackintosh/discussions/20).
 
 Tested on:
 
