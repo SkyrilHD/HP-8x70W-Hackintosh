@@ -8,24 +8,7 @@
 
 This repo includes an OpenCore EFI for 8570W. If anyone has an 8770W, we would like to hear a feedback [here](https://github.com/SkyrilHD/HP-8570W-Hackintosh/issues/14).
 
-### EFI Compatibility list:
-
-| GPU | Display | Supported? | Additional notes |
-| :-----: | :-----: | :-----: | :-----: |
-| NVIDIA Quadro K1000M/K2000M | TN-Panel | **Yes** | 1 |
-| AMD FirePro M4000 | TN-Panel | _Unknown_ | 2 |
-| NVIDIA Quadro K1000M/K2000M | DreamColor 2 | _No_ | 3 |
-| AMD FirePro M4000 | DreamColor 2 | _No_ | 3 |
-
-Bold: confirmed working
-
-Italic: not confirmed
-
-1: Brightness control does NOT work
-
-2: add `radpg=15` as boot-arg & read information [here](https://github.com/SkyrilHD/HP-8570W-Hackintosh/discussions/20)
-
-3: Since users of the DreamColor screen can't use any of the stock GPUs: There's the possibility of using a FirePro W5170M or WX4170M, which uses a proper eDP display signal, thus making the internal screen + backlight control work under macOS. Note: You won't be able to use any of the TN panels as these newer GPUs don't give out any LVDS signals. And on the WX4170M, you won't be able to control the GPU fans. If anyone uses any of those GPUs in their 8570W, let us know, so we can test.
+### This EFI only works on NVIDIA GPUs and TN-Panel. DreamColor will not be supported!
 
 
 Tested on:
