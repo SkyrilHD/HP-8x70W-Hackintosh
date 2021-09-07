@@ -1,6 +1,6 @@
 # HP 8570W Hackintosh
 
-[![OpenCore Version](https://img.shields.io/badge/OpenCore-0.7.2-green.svg)](https://github.com/SkyrilHD/HP-8570W-Hackintosh/)
+[![OpenCore Version](https://img.shields.io/badge/OpenCore-0.7.3-green.svg)](https://github.com/SkyrilHD/HP-8570W-Hackintosh/)
 [![GitHub release](https://img.shields.io/github/tag/SkyrilHD/HP-8570W-Hackintosh.svg)](https://github.com/SkyrilHD/HP-8570W-Hackintosh/releases/)
 [![GitHub issues](https://img.shields.io/github/issues/SkyrilHD/HP-8570W-Hackintosh.svg)](https://github.com/SkyrilHD/HP-8570W-Hackintosh/issues/)
 
