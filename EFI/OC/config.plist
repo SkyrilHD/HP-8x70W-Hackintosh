@@ -940,7 +940,7 @@
 				<key>MinKernel</key>
 				<string></string>
 				<key>MaxKernel</key>
-				<string></string>
+				<string>19.99.99</string>
 				<key>PlistPath</key>
 				<string>Contents/Info.plist</string>
 			</dict>
@@ -976,7 +976,7 @@
 				<key>MinKernel</key>
 				<string></string>
 				<key>MaxKernel</key>
-				<string></string>
+				<string>20.99.99</string>
 				<key>PlistPath</key>
 				<string>Contents/Info.plist</string>
 			</dict>
@@ -1502,7 +1502,7 @@
 			<key>ScanPolicy</key>
 			<integer>0</integer>
 			<key>SecureBootModel</key>
-			<string>Default</string>
+			<string>j137</string>
 			<key>Vault</key>
 			<string>Optional</string>
 		</dict>
@@ -1556,8 +1556,6 @@
 				<data>AAAAAA==</data>
 				<key>ForceDisplayRotationInEFI</key>
 				<integer>0</integer>
-				<key>prev-lang:kbd</key>
-				<string>de:3</string>
 				<key>run-efi-updater</key>
 				<string>No</string>
 			</dict>
@@ -1627,7 +1625,7 @@
 			<key>MaxBIOSVersion</key>
 			<false/>
 			<key>MLB</key>
-			<string>C02310700GUDY3VFB</string>
+			<string>ENTER HERE</string>
 			<key>ProcessorType</key>
 			<integer>0</integer>
 			<key>ROM</key>
@@ -1637,11 +1635,11 @@
 			<key>SystemMemoryStatus</key>
 			<string>Auto</string>
 			<key>SystemProductName</key>
-			<string>MacBookPro10,1</string>
+			<string>MacBookPro11,3</string>
 			<key>SystemSerialNumber</key>
-			<string>C02KD07NDKQ1</string>
+			<string>ENTER HERE</string>
 			<key>SystemUUID</key>
-			<string>20B55FB0-0E63-4D12-B3F3-52914D8E3A82</string>
+			<string>ENTER HERE</string>
 		</dict>
 		<key>UpdateDataHub</key>
 		<true/>
@@ -1667,9 +1665,9 @@
 			<key>JumpstartHotPlug</key>
 			<false/>
 			<key>MinDate</key>
-			<integer>0</integer>
+			<integer>-1</integer>
 			<key>MinVersion</key>
-			<integer>0</integer>
+			<integer>-1</integer>
 		</dict>
 		<key>AppleInput</key>
 		<dict>
