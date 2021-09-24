@@ -64,7 +64,7 @@ After you have created a bootable Installer, copy the EFI folder to the EFI part
 
 ## Generating your own serial and Editing ROM
 
-Use GenSMBIOS (https://github.com/corpnewt/GenSMBIOS) to generate a serial for MacBookPro9,1 or 10,1
+Use GenSMBIOS (https://github.com/corpnewt/GenSMBIOS) to generate a serial for MacBookPro11,3
 
 use PlistEdit Pro or any decent plist editor to manually enter the details in the following sections of the config (as shown in the video): (SystemSerialNumber, MLB, and UUID)
 
@@ -78,10 +78,11 @@ As the stock WiFi cards don't have Bluetooth built-in, HP uses a dedicated broad
 
 ## WiFi
 
-If you have the stock Intel cards:
-You need remove AirportBrcmFixup.kext and replace it with [Airportitlwm](https://github.com/OpenIntelWireless/itlwm/releases) to get WiFi working. But for the full macOS experience with AirDrop, Handoff and all of that, replace the Intel WiFi card with a supported Broadcom one.
+For stock HP BCM943224HMS users, WiFi will work out of the box, no need to do anything here.
 
-Recommended WiFi cards: Azureware AW-CE123H, Dell DW1550, Lenovo Lite-On WCBN606BH
+Intel WiFi users will need remove AirportBrcmFixup.kext, replace it with [Airportitlwm](https://github.com/OpenIntelWireless/itlwm/releases) and do an OC snapshot to get WiFi working. If you want the full macOS experience with AirDrop, Handoff and all of that, replace the Intel WiFi card with a supported Broadcom one.
+
+Recommended WiFi cards: Azureware AW-CE123H, Dell DW1550
 
 ## BIOS settings
 
@@ -91,7 +92,7 @@ Recommended WiFi cards: Azureware AW-CE123H, Dell DW1550, Lenovo Lite-On WCBN606
 
 * SecureBoot: Disabled
 
-* Boot Mode: UEFI Hybrid (with CSM)
+* Boot Mode: UEFI / UEFI Hybrid (with CSM)
 
 **Device Configurations**
     
@@ -128,6 +129,12 @@ Recommended WiFi cards: Azureware AW-CE123H, Dell DW1550, Lenovo Lite-On WCBN606
 ## BIOS versions
 
 I decided to include this topic in the README instead of my GitHub Pages for visibility. Basically due to the fact that HP is preventing users from downgrade the BIOS, I recommend sticking to the oldest version if possible. For now, F.31, F.61 and F.71 (currently latest version) are confirmed working. I would like to complete my table which can be viewed [here](https://github.com/SkyrilHD/HP-8570W-Hackintosh/issues/10). Contributing to this project will help a ton :). If you want to know whether or not your BIOS is confirmed working, you can check [here](https://github.com/SkyrilHD/HP-8570W-Hackintosh/issues?q=label%3ABIOS+). If you cannot find your BIOS version, please try the EFI out and provide feedback [here](https://github.com/SkyrilHD/HP-8570W-Hackintosh/issues/new/choose).
+
+## macOS Monterey
+
+Since Monterey Beta 7 dropped support for Nvidia Kepler GPUs, we decided to seperate the config into two plists:
+
+If you want to run Monterey, you need to replace the config.plist with the included Monterey version and install the Post-Install Volume Patch using [OpenCore Legacy Patcher](https://github.com/dortania/OpenCore-Legacy-Patcher/releases). Keep in mind that you'll lose System Integrity Protection, Secure Boot and the ability to apply Delta OTA updates after doing this.
 
 ## Older versions of macOS
 
