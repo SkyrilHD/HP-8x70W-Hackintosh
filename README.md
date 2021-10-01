@@ -136,10 +136,6 @@ Since Monterey Beta 7 dropped support for Nvidia Kepler GPUs, we decided to sepe
 
 If you want to run Monterey, you need to replace the config.plist with the included Monterey version and install the Post-Install Volume Patch using [OpenCore Legacy Patcher](https://github.com/dortania/OpenCore-Legacy-Patcher/releases). Keep in mind that you'll lose System Integrity Protection, Secure Boot and the ability to apply Delta OTA updates after doing this.
 
-## Older versions of macOS
-
-This EFI does not currently support Catalina and older due to Acidanthera's new security policy. To be able to use older versions of macOS, you have to change the "SecureBootModel" to "j137", APFS>MinDate to "-1" and APFS>MinVersion to "-1".
-
 ## Credits
 
 Thanks to:
