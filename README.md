@@ -132,9 +132,15 @@ I decided to include this topic in the README instead of my GitHub Pages for vis
 
 ## macOS Monterey
 
-Since Monterey Beta 7 dropped support for Nvidia Kepler GPUs, we decided to seperate the config into two plists:
+If you want to run Monterey, you have to set the following:
 
-If you want to run Monterey, you need to replace the config.plist with the included Monterey version and install the Post-Install Volume Patch using [OpenCore Legacy Patcher](https://github.com/dortania/OpenCore-Legacy-Patcher/releases). Keep in mind that you'll lose System Integrity Protection, Secure Boot and the ability to apply Delta OTA updates after doing this.
+| Quirk | Value | Where To Find |
+| -- | -- | -- |
+| SystemProductName | MacBookPro11,5 | Under PlatformInfo/Generic |
+| SecureBootModel | Disabled | Under Misc/Security |
+| csr-active-config | EF0F0000 | Under NVRAM/7C436110-AB2A-4BBB-A880-FE41995C9F82 |
+
+After installing Monterey, you need to install the Post-Install Volume Patch using [OpenCore Legacy Patcher](https://github.com/dortania/OpenCore-Legacy-Patcher/releases) to patch the NVIDIA graphics kexts back to Monterey. Keep in mind that you'll lose the ability to apply Delta OTA updates after doing this.
 
 ## Credits
 
