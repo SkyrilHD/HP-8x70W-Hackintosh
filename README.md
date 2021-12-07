@@ -1,6 +1,6 @@
 # HP 8570W Hackintosh
 
-[![OpenCore Version](https://img.shields.io/badge/OpenCore-0.7.2-green.svg)](https://github.com/SkyrilHD/HP-8570W-Hackintosh/)
+[![OpenCore Version](https://img.shields.io/badge/OpenCore-0.7.3-green.svg)](https://github.com/SkyrilHD/HP-8570W-Hackintosh/)
 [![GitHub release](https://img.shields.io/github/tag/SkyrilHD/HP-8570W-Hackintosh.svg)](https://github.com/SkyrilHD/HP-8570W-Hackintosh/releases/)
 [![GitHub issues](https://img.shields.io/github/issues/SkyrilHD/HP-8570W-Hackintosh.svg)](https://github.com/SkyrilHD/HP-8570W-Hackintosh/issues/)
 
@@ -8,25 +8,9 @@
 
 This repo includes an OpenCore EFI for 8570W. If anyone has an 8770W, we would like to hear a feedback [here](https://github.com/SkyrilHD/HP-8570W-Hackintosh/issues/14).
 
-### EFI Compatibility list:
+### This EFI only works on NVIDIA GPUs and TN-Panel. DreamColor screens will not be supported!
 
-| GPU | Display | Supported? | Additional notes |
-| :-----: | :-----: | :-----: | :-----: |
-| NVIDIA Quadro K1000M/K2000M | TN-Panel | **Yes** | 1 |
-| AMD FirePro M4000 | TN-Panel | _Unknown_ | 2 |
-| NVIDIA Quadro K1000M/K2000M | DreamColor 2 | _No_ | 3 |
-| AMD FirePro M4000 | DreamColor 2 | _No_ | 3 |
-
-Bold: confirmed working
-
-Italic: not confirmed
-
-1: Brightness control does NOT work
-
-2: add `radpg=15` as boot-arg & read information [here](https://github.com/SkyrilHD/HP-8570W-Hackintosh/discussions/20)
-
-3: Since users of the DreamColor screen can't use any of the stock GPUs: There's the possibility of using a FirePro W5170M or WX4170M, which uses a proper eDP display signal, thus making the internal screen + backlight control work under macOS. Note: You won't be able to use any of the TN panels as these newer GPUs don't give out any LVDS signals. And on the WX4170M, you won't be able to control the GPU fans. If anyone uses any of those GPUs in their 8570W, let us know, so we can test.
-
+AMD FirePro M4000 users can check [here](https://github.com/SkyrilHD/HP-8570W-Hackintosh/discussions/20).
 
 Tested on:
 
@@ -36,9 +20,9 @@ Tested on:
 | GPU | Nvidia Quadro K1000M  | |
 | RAM | 16 GB 1600 MHz DDR3  | 32 GB 1600 MHz DDR3 |
 | Screen | 1080p TN-Panel  | |
-| WiFi | Azureware AW-CE123H (BCM94352HMB) | BCM943224HMS (WiFi-only card) |
-| Bluetooth | HP BCM920702MD |
-| OS | macOS 10.15.7 Catalina | |
+| WiFi | Azureware AW-CE123H (BCM94352HMB) | BCM943224HMS |
+| Bluetooth | HP BCM20702MD |
+| macOS | 10.15.7 (Catalina) | 11.5.2 (Big Sur) |
 | BIOS | F.31 | F.61 |
 
 ## What works?
@@ -46,6 +30,7 @@ Tested on:
 - Audio
 - Battery readout
 - Boot
+- Bluetooth
 - Broadcom WiFi (incl. Handoff + AirDrop)
 - Docking Station (USB + DVI-D)
 - Ethernet
@@ -68,19 +53,19 @@ Tested on:
 
 Go to the [Releases](https://github.com/SkyrilHD/HP-8570W-Hackintosh/releases/) page of this repo and download the latest release. Then, copy the EFI folder to your EFI partition... That's it.
 
-## How to Install macOS Catalina
+## How to Install macOS Big Sur
 
-There are two ways you can install Catalina:
+There are two ways you can install Big Sur:
 
-1. Have a working install of macOS, download the Installer from the App Store, then make a bootable Installer with createinstallmedia by using this command in Terminal `sudo /Applications/Install\ macOS\ Catalina.app/Contents/Resources/createinstallmedia --volume /Volumes/MyVolume`
+1. If you have an already working macOS, download the Installer from the App Store and make a bootable Installer with `createinstallmedia` by using this command in Terminal: `sudo /Applications/Install\ macOS\ Big\ Sur.app/Contents/Resources/createinstallmedia --volume /Volumes/MyVolume`
 
-2. If you are using Windows, use [macrecovery.py](https://dortania.github.io/OpenCore-Install-Guide/installer-guide/winblows-install.html) from the offical OpenCore release package.
+2. If you are using Windows, use [macrecovery.py](https://github.com/acidanthera/OpenCorePkg/tree/master/Utilities/macrecovery) from the offical [OpenCore release package](https://github.com/acidanthera/OpenCorePkg/releases/). Follow this [guide](https://dortania.github.io/OpenCore-Install-Guide/installer-guide/winblows-install.html) to understand how it works.
 
-After you have created a bootable Installer, copy the EFI folder to the EFI partition and install as usual (GUID Partiton Map; APFS). After the installation, mount the EFI partition of the installed OS and copy the EFI folder to its partition.
+After you have created a bootable Installer, copy the EFI folder to the EFI partition and install as usual. After the installation, mount the EFI partition of the installed OS and copy the EFI folder to its partition.
 
 ## Generating your own serial and Editing ROM
 
-Use GenSMBIOS (https://github.com/corpnewt/GenSMBIOS) to generate a serial for MacBookPro9,1 or 10,1
+Use GenSMBIOS (https://github.com/corpnewt/GenSMBIOS) to generate a serial for MacBookPro9,1
 
 use PlistEdit Pro or any decent plist editor to manually enter the details in the following sections of the config (as shown in the video): (SystemSerialNumber, MLB, and UUID)
 
@@ -88,16 +73,13 @@ https://user-images.githubusercontent.com/59102649/116117179-3ea51200-a6bc-11eb-
 
 You should also put in your ethernet adapter's MAC address into the ROM section.
 
-## Bluetooth
-
-As the stock WiFi cards don't have Bluetooth built-in, HP uses a dedicated broadcom bluetooth module which works fine under macOS.
-
 ## WiFi
 
-If you have the stock Intel cards:
-You need remove AirportBrcmFixup.kext and replace it with [Airportitlwm](https://github.com/OpenIntelWireless/itlwm/releases) to get WiFi working. But for the full macOS experience with AirDrop, Handoff and all of that, replace the Intel WiFi card with a supported Broadcom one.
+For stock HP BCM943224HMS users, WiFi will work out of the box, no need to do anything here.
 
-Recommended WiFi cards: Azureware AW-CE123H, Dell DW1550, Lenovo Lite-On WCBN606BH
+Intel WiFi users will need remove AirportBrcmFixup.kext, replace it with [Airportitlwm](https://github.com/OpenIntelWireless/itlwm/releases) and do an OC snapshot to get WiFi working. If you want the full macOS experience with AirDrop, Handoff and all of that, replace the Intel WiFi card with a supported Broadcom one.
+
+Recommended WiFi cards: Azureware AW-CE123H, Dell DW1550
 
 ## BIOS settings
 
@@ -107,7 +89,7 @@ Recommended WiFi cards: Azureware AW-CE123H, Dell DW1550, Lenovo Lite-On WCBN606
 
 * SecureBoot: Disabled
 
-* Boot Mode: UEFI Hybrid (with CSM)
+* Boot Mode: UEFI / UEFI Hybrid (with CSM)
 
 **Device Configurations**
     
@@ -145,9 +127,16 @@ Recommended WiFi cards: Azureware AW-CE123H, Dell DW1550, Lenovo Lite-On WCBN606
 
 I decided to include this topic in the README instead of my GitHub Pages for visibility. Basically due to the fact that HP is preventing users from downgrade the BIOS, I recommend sticking to the oldest version if possible. For now, F.31, F.61 and F.71 (currently latest version) are confirmed working. I would like to complete my table which can be viewed [here](https://github.com/SkyrilHD/HP-8570W-Hackintosh/issues/10). Contributing to this project will help a ton :). If you want to know whether or not your BIOS is confirmed working, you can check [here](https://github.com/SkyrilHD/HP-8570W-Hackintosh/issues?q=label%3ABIOS+). If you cannot find your BIOS version, please try the EFI out and provide feedback [here](https://github.com/SkyrilHD/HP-8570W-Hackintosh/issues/new/choose).
 
-## NVIDIA Patches
+## macOS Monterey
 
-Starting with v4.3.13, patches for NVIDIA GPUs have been added to enable "Internal Display" in "About This Mac". Unfortunately, the backlight control still doesn't work as the K1000M is limited, therefore it is deactivated in "System Preferences". Information on how to activate these patches can be found at this [link](https://github.com/SkyrilHD/HP-8570W-Hackintosh/issues/1#issuecomment-819961384).
+If you want to run Monterey, you have to set the following:
+
+| Quirk | Value to set | Where To Find |
+| -- | -- | -- |
+| csr-active-config | 030A0000 | Under NVRAM/7C436110-AB2A-4BBB-A880-FE41995C9F82 |
+
+After installing Monterey, you need to install the Post-Install Volume Patch using [OpenCore Legacy Patcher](https://github.com/dortania/OpenCore-Legacy-Patcher/releases) to patch the NVIDIA graphics kexts back to Monterey. Keep in mind that you'll lose the ability to apply Delta OTA updates after doing this.
+The patch needs to be reapplied after every macOS update.
 
 ## Credits
 
