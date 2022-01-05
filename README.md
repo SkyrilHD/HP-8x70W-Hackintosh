@@ -37,9 +37,9 @@ Tested on:
 - ExpressCard
 - GPU acceleration
 - Keyboard + Trackpad (incl. Magic TrackPad 2 emulation)
-- SD-Card
+- SD-Card (if disabling IEEE 1394)
+- Firewire / IEEE 1394 (if disabling Flash media reader)
 - Sleep
-- Sleep through closing the lid
 - TrackPoint
 - Power Management
 - (NVIDIA) Internal Display shows as internal [Learn more](#NVIDIA-Patches)
@@ -75,11 +75,21 @@ You should also put in your ethernet adapter's MAC address into the ROM section.
 
 ## WiFi
 
-For stock HP BCM943224HMS users, WiFi will work out of the box, no need to do anything here.
+If you have the stock HP BCM943224HMS or a card based on the BCM94352HMB wifi chip, they will work out of the box, no need to do anything here.
 
-Intel WiFi users will need remove AirportBrcmFixup.kext, replace it with [Airportitlwm](https://github.com/OpenIntelWireless/itlwm/releases) and do an OC snapshot to get WiFi working. If you want the full macOS experience with AirDrop, Handoff and all of that, replace the Intel WiFi card with a supported Broadcom one.
+Intel WiFi users will need remove AirportBrcmFixup.kext, replace it with [Airportitlwm](https://github.com/OpenIntelWireless/itlwm/releases) and do an OC snapshot with ProperTree to get WiFi working. If you want the full macOS experience with AirDrop, Handoff and all of that, replace the Intel WiFi card with a supported Broadcom one.
 
 Recommended WiFi cards: Azureware AW-CE123H, Dell DW1550
+
+#### Country Code for Broadcom Wireless Cards
+
+Some countries have different 5GHz bands and may not be supported for some. 
+You can specify other country codes like: US, DE, #a, etc by going into:
+
+- `EFI/OC/config.plist > DeviceProperties > Add > PciRoot(0x0)/Pci(0x1C,0x3)/Pci(0x0,0x0)` and rename/uncomment:
+- `#brcmfx-country` to `#brcmfx-country` and set the desired value (**#a** is the preset value, replace with the country code that you need)
+
+Some cards however have their country code hardcoded to the module in which the setting causes macOS to either no longer boot or your wifi to stop working and you're pretty much out of luck at that point.
 
 ## BIOS settings
 
@@ -125,11 +135,11 @@ Recommended WiFi cards: Azureware AW-CE123H, Dell DW1550
 
 ## macOS Monterey
 
-If you want to run Monterey, you have to set the following:
+If you want to run Monterey, you have to disable secure boot and weaken SIP by going into:
 
-| Quirk | Value to set | Where To Find |
-| -- | -- | -- |
-| csr-active-config | 030A0000 | Under NVRAM/7C436110-AB2A-4BBB-A880-FE41995C9F82 |
+`EFI/OC/config.plist > NVRAM > 7C436110-AB2A-4BBB-A880-FE41995C9F82` and changing `csr-active-config` from `00000000` to `030A0000`
+
+`EFI/OC/config.plist > Kernel > Misc > Security` and changing `SecureBootModel` from `Default` to `Disabled`
 
 After installing Monterey, you need to install the Post-Install Volume Patch using [OpenCore Legacy Patcher](https://github.com/dortania/OpenCore-Legacy-Patcher/releases) to patch the NVIDIA graphics kexts back to Monterey. Keep in mind that you'll lose System Integrity Protection and the ability to apply Delta OTA updates after doing this.
 The patch needs to be reapplied after every macOS update.
