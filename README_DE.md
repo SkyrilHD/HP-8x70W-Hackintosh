@@ -35,11 +35,11 @@ Getestet auf:
 - Sleep durchs Zuklappen des Notebooks
 - TrackPoint
 - (NVIDIA) Internes Display wird als internes angezeigt
+- Powermanagement
 
 ## Was funktioniert nicht?
 
 - Helligskeitskontrolle (wegen NVIDIA und fehlender iGPU)
-- Powermanagement
 - Audio durch die Dockingstation
 
 ## BIOS-Einstellungen
@@ -86,7 +86,7 @@ Getestet auf:
 
 ## Installation
 
-Konfiguration auf der [Releases-Seite](https://github.com/SkyrilHD/HP-8570W-Hackintosh/releases/)herunterladen und den EFI-Ordner auf die EFI Partition des Speichermediums kopieren, wo sich macOS befindet.
+Neuste Konfiguration auf der [Releases-Seite](https://github.com/SkyrilHD/HP-8570W-Hackintosh/releases/) herunterladen und den EFI-Ordner auf die EFI Partition des Speichermediums kopieren, wo sich macOS befindet.
 
 ## macOS Big Sur installieren
 
