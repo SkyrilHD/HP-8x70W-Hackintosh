@@ -135,7 +135,7 @@ If you want to run Monterey, you have to set the following:
 | -- | -- | -- |
 | csr-active-config | 030A0000 | Under NVRAM/7C436110-AB2A-4BBB-A880-FE41995C9F82 |
 
-After installing Monterey, you need to install the Post-Install Volume Patch using [OpenCore Legacy Patcher](https://github.com/dortania/OpenCore-Legacy-Patcher/releases) to patch the NVIDIA graphics kexts back to Monterey. Keep in mind that you'll lose the ability to apply Delta OTA updates after doing this.
+After installing Monterey, you need to install the Post-Install Volume Patch using [OpenCore Legacy Patcher](https://github.com/dortania/OpenCore-Legacy-Patcher/releases) to patch the NVIDIA graphics kexts back to Monterey. Keep in mind that you'll lose System Integrity Protection and the ability to apply Delta OTA updates after doing this.
 The patch needs to be reapplied after every macOS update.
 
 ## Credits
