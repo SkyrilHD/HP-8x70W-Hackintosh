@@ -4,7 +4,7 @@
 
 Diese Repository enthält eine OpenCore EFI-Konfiguration für das HP Elitebook 8570W.
 
-### This EFI ist nur mit Geräten mit NVIDIA-GPU und TN-Display kompatibel. DreamColor-Displays werden nicht unterstützt!
+### Diese EFI ist nur mit Geräten mit NVIDIA-GPU und TN-Display kompatibel. DreamColor-Displays werden nicht unterstützt!
 
 Getestet auf:
 
