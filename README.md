@@ -87,7 +87,7 @@ Some countries have different 5GHz bands and may not be supported for some.
 You can specify other country codes like: US, DE, #a, etc by going into:
 
 - `EFI/OC/config.plist > DeviceProperties > Add > PciRoot(0x0)/Pci(0x1C,0x3)/Pci(0x0,0x0)` and rename/uncomment:
-- `#brcmfx-country` to `#brcmfx-country` and set the desired value (**#a** is the preset value, replace with the country code that you need)
+- `#brcmfx-country` to `brcmfx-country` and set the desired value (**#a** is the preset value, replace with the country code that you need)
 
 Some cards however have their country code hardcoded to the module in which the setting causes macOS to either no longer boot or your wifi to stop working and you're pretty much out of luck at that point.
 
