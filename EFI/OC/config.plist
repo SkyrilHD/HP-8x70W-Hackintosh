@@ -341,11 +341,6 @@
 				<key>@0,backlight-control</key>
 				<data>AQAAAA==</data>
 			</dict>
-			<key>PciRoot(0x0)/Pci(0x1C,0x3)/Pci(0x0,0x0)</key>
-			<dict>
-				<key>brcmfx-country</key>
-				<string>DE</string>
-			</dict>
 		</dict>
 		<key>Delete</key>
 		<dict/>
