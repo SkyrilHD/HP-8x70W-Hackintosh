@@ -1447,8 +1447,6 @@
 			<false/>
 			<key>DisconnectHda</key>
 			<false/>
-			<key>MinimumVolume</key>
-			<integer>20</integer>
 			<key>PlayChime</key>
 			<string>Auto</string>
 			<key>ResetTrafficClass</key>
