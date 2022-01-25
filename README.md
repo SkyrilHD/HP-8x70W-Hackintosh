@@ -14,7 +14,7 @@ AMD FirePro M4000 users can check [here](https://github.com/SkyrilHD/HP-8570W-Ha
 
 Tested on:
 
-| Specs | Laptop 1 (dead) ([@HansHubertHass](https://github.com/HansHubertHass)) | Laptop 2 ([@Bautheile](https://github.com/Bautheile)) |
+| Specs | Laptop 1 ([@HansHubertHass](https://github.com/HansHubertHass)) | Laptop 2 ([@Bautheile](https://github.com/Bautheile)) |
 | -- | -- | -- |
 | CPU | Intel Core i7-3720QM | Intel Core i7-3840QM |
 | GPU | Nvidia Quadro K1000M  | |
