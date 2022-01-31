@@ -48,6 +48,7 @@ Tested on:
 
 - (NVIDIA) Since the 8570W does not have an iGPU and this laptop only has a K1000M, there is no brightness control.
 - Docking Station Audio
+- Fingerprint sensor
 - One of the left USB 2.0 ports due to a stupid implementation from HP (why did they map the interal bluetooth controller to the same port that an external device plugs into)
 
 ## Download and Install
