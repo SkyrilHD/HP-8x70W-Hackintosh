@@ -42,7 +42,7 @@ Tested on:
 - Sleep
 - TrackPoint
 - Power Management
-- (NVIDIA) Internal Display shows as internal [Learn more](#NVIDIA-Patches)
+- (NVIDIA) Internal Display shows as internal
 
 ## What doesn't work?
 
