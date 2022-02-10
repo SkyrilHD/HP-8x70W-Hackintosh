@@ -16,13 +16,13 @@ Tested on:
 
 | Specs | Laptop 1 ([@HansHubertHass](https://github.com/HansHubertHass)) | Laptop 2 ([@Bautheile](https://github.com/Bautheile)) |
 | -- | -- | -- |
-| CPU | Intel Core i7-3720QM | Intel Core i7-3840QM |
+| CPU | Intel Core i5-3360M | Intel Core i7-3840QM |
 | GPU | Nvidia Quadro K1000M  | |
-| RAM | 16 GB 1600 MHz DDR3  | 32 GB 1600 MHz DDR3 |
+| RAM | 8 GB 1600 MHz DDR3  | 32 GB 1600 MHz DDR3 |
 | Screen | 1080p TN-Panel  | |
 | WiFi | Azureware AW-CE123H (BCM94352HMB) | BCM943224HMS |
 | Bluetooth | HP BCM20702MD |
-| macOS | 10.15.7 (Catalina) | 11.5.2 (Big Sur) |
+| macOS | 10.15.7 (Catalina) | 11.6.3 (Big Sur) |
 | BIOS | F.31 | F.61 |
 
 ## What works?
