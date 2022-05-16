@@ -1,31 +1,26 @@
-# HP 8570W Hackintosh
+# HP 8570W/8770W Hackintosh
 
 [![OpenCore Version](https://img.shields.io/badge/OpenCore-0.7.7-green.svg)](https://github.com/SkyrilHD/HP-8570W-Hackintosh/)
 [![GitHub release](https://img.shields.io/github/tag/SkyrilHD/HP-8570W-Hackintosh.svg)](https://github.com/SkyrilHD/HP-8570W-Hackintosh/releases/)
 [![GitHub issues](https://img.shields.io/github/issues/SkyrilHD/HP-8570W-Hackintosh.svg)](https://github.com/SkyrilHD/HP-8570W-Hackintosh/issues/)
 
-### Before you give this EFI a try, make sure you read [this](https://github.com/SkyrilHD/HP-8570W-Hackintosh/issues/10), [this](#BIOS-versions) and [this](#Generating-your-own-serial-and-Editing-ROM)!
+### Before you give this EFI a try, make sure you read [this](#Settings-for-NVIDIA-GPUs) and [this](#Generating-your-own-serial-and-Editing-ROM)!
 
-This repo includes an OpenCore EFI for 8570W. If anyone has an 8770W, we would like to hear a feedback [here](https://github.com/SkyrilHD/HP-8570W-Hackintosh/issues/14).
-
-### This EFI only works on NVIDIA GPUs and TN-Panel. DreamColor screens will not be supported!
-
-AMD FirePro M4000 users can check [here](https://github.com/SkyrilHD/HP-8570W-Hackintosh/discussions/20).
+This repo includes an OpenCore EFI for 8570W and 8770W.
 
 Tested on:
 
-| Specs | Laptop 1 ([@HansHubertHass](https://github.com/HansHubertHass)) | Laptop 2 ([@Bautheile](https://github.com/Bautheile)) |
+| Specs | 8770W ([@HansHubertHass](https://github.com/HansHubertHass)) | 8570W ([@Bautheile](https://github.com/Bautheile)) |
 | -- | -- | -- |
 | CPU | Intel Core i5-3360M | Intel Core i7-3840QM |
-| GPU | Nvidia Quadro K1000M  | |
+| GPU | AMD FirePro M4000 | Nvidia Quadro K1000M | 
 | RAM | 8 GB 1600 MHz DDR3  | 32 GB 1600 MHz DDR3 |
 | Screen | 1080p TN-Panel  | |
 | WiFi | Azureware AW-CE123H (BCM94352HMB) | BCM943224HMS |
 | Bluetooth | HP BCM20702MD |
-| macOS | 10.15.7 (Catalina) | 11.6.3 (Big Sur) |
-| BIOS | F.31 | F.61 |
+| macOS |  | 11.6.3 (Big Sur) |
 
-## What works?
+## Working features
 
 - Audio
 - Battery readout
@@ -44,22 +39,26 @@ Tested on:
 - Power Management
 - (NVIDIA) Internal Display shows as internal
 
-## What doesn't work?
+## Known Issues / not working
 
-- (NVIDIA) Since the 8570W does not have an iGPU and this laptop only has a K1000M, there is no brightness control.
+- (NVIDIA) Brightness Control
 - Docking Station Audio
 - Fingerprint sensor
-- One of the left USB 2.0 ports due to a stupid implementation from HP (why did they map the interal bluetooth controller to the same port that an external device plugs into)
+- One of the left USB 2.0 ports is broken due to a stupid implementation from HP (why did they map the internal bluetooth controller to the same port that an external device plugs into)
 
 ## Download and Install
 
 Go to the [Releases](https://github.com/SkyrilHD/HP-8570W-Hackintosh/releases/) page of this repo and download the latest release. Then, copy the EFI folder to your EFI partition... That's it.
 
-## How to Install macOS Big Sur
+## How to Install macOS:
 
-There are two ways you can install Big Sur:
+There are two ways for installation:
 
-1. If you have an already working macOS, download the Installer from the App Store and make a bootable Installer with `createinstallmedia` by using this command in Terminal: `sudo /Applications/Install\ macOS\ Big\ Sur.app/Contents/Resources/createinstallmedia --volume /Volumes/MyVolume`
+1. If you have a working macOS install, download the Installer from the App Store and make a bootable Installer with `createinstallmedia` by using this command in Terminal: 
+
+    **Big Sur**: `sudo /Applications/Install\ macOS\ Big\ Sur.app/Contents/Resources/createinstallmedia --volume /Volumes/MyVolume`
+
+    **Monterey**: `sudo /Applications/Install\ macOS\ Monterey.app/Contents/Resources/createinstallmedia --volume /Volumes/MyVolume`
 
 2. If you are using Windows, use [macrecovery.py](https://github.com/acidanthera/OpenCorePkg/tree/master/Utilities/macrecovery) from the offical [OpenCore release package](https://github.com/acidanthera/OpenCorePkg/releases/). Follow this [guide](https://dortania.github.io/OpenCore-Install-Guide/installer-guide/winblows-install.html) to understand how it works.
 
@@ -101,7 +100,7 @@ Some cards however have their country code hardcoded to the module in which the 
 
 * SecureBoot: Disabled
 
-* Boot Mode: UEFI / UEFI Hybrid (with CSM)
+* Boot Mode: UEFI
 
 **Device Configurations**
     
@@ -135,14 +134,57 @@ Some cards however have their country code hardcoded to the module in which the 
 
 * Smart Card: Disabled
 
-## macOS Monterey
+## Settings for NVIDIA GPUs
 
-If you want to run Monterey, you have to disable secure boot and weaken SIP by going into:
+For those running an NVIDIA GPU, you'll need to the following before attempting to boot the EFI:
 
-`EFI/OC/config.plist > NVRAM > 7C436110-AB2A-4BBB-A880-FE41995C9F82` and changing `csr-active-config` from `00000000` to `030A0000`
+1. open the config.plist and navigate to the following section:
 
-After installing Monterey, you need to install the Post-Install Volume Patch using [OpenCore Legacy Patcher](https://github.com/dortania/OpenCore-Legacy-Patcher/releases) to patch the NVIDIA graphics kexts back to Monterey. Keep in mind that you'll lose System Integrity Protection and the ability to apply Delta OTA updates after doing this.
+		<key>PciRoot(0x0)/Pci(0x1,0x0)/Pci(0x0,0x0)</key>
+			<dict>
+    			<key>shikigva</key>
+    			<integer>80</integer>
+    			<key>unfairgva</key>
+    			<integer>1</integer>
+    			<key>rebuild-device-tree</key>
+    			<integer>1</integer>
+    			<key>agdpmod</key>
+    			<string>pikera</string>
+    			<key>CAIL,CAIL_DisableDrmdmaPowerGating</key>
+    			<data>AQAAAA==</data>
+    			<key>CAIL,CAIL_DisableGfxCGPowerGating</key>
+    			<data>AQAAAA==</data>
+    			<key>CAIL,CAIL_DisableUVDPowerGating</key>
+    			<data>AQAAAA==</data>
+    			<key>CAIL,CAIL_DisableVCEPowerGating</key>
+    			<data>AQAAAA==</data>
+    			<key>connectors</key>
+				<data>AgAAAEAAAAAJCQEAAAAAABAAAAUAAAAAAAQAAAQDAAAACQIAAAAAABECAQEAAAAAAAQAAAQDAAAACQMAAAAAACEDAgIAAAAAAAgAAAQCAAAAAQQAAAAAABIEAwMAAAAA</data>
+    			<key>applbkl</key>
+    			<data>AQAAAA==</data>
+    			<key>applbkl-name</key>
+    			<data>RjE0VHh4eHgA</data>
+    			<key>applbkl-data</key>
+    			<data>ABEAAAAEAAsAEAAUABoAIwArADQAPwBOAGIAeQCUALUA2gD/</data>
+				<key>ATY,bin_image</key>
+				<data>**too long to include in the readme**</data>
+				<key>#@0,built-in</key>
+				<string></string>
+				<key>#@0,backlight-control</key>
+				<data>AQAAAA==</data>
+
+2. Add a `#` in front of every key from `shikigva` to `ATY,bin_image` to outcomment all the AMD patches and remove the `#` from `#@0,built-in` and `#@0,backlight-control`
+
+The following steps are for those who want to run Monterey:
+
+3. Navigate to `Kernel > Security` and change `SecureBootModel` to `Disabled`
+
+4. Nagivate to `NVRAM > 7C436110-AB2A-4BBB-A880-FE41995C9F82` and change `csr-active-config` from `00000000` to `02080000`
+
+After installing Monterey, you need to install the Post-Install Volume Patch using [OpenCore Legacy Patcher](https://github.com/dortania/OpenCore-Legacy-Patcher/releases) to patch the NVIDIA graphics kexts back to Monterey. Keep in mind that you'll lose System Integrity Protection and the ability to apply Delta OTA updates for doing this.
 The patch needs to be reapplied after every macOS update.
+
+AMD users won't need to apply any root patches, as macOS currently still includes drivers for all GCN based AMD GPUs
 
 ## Credits
 
@@ -153,3 +195,4 @@ Thanks to:
 - Rehabman (for fixing keyboard issues and providing patches for 8x70)
 - [TECHNIKVERBOT](https://github.com/TECHNIKVERBOT) (for the idea to do this because there were no downloads outside of China :P)
 - [HansHubertHass](https://github.com/HansHubertHass) and [Bautheile](https://github.com/Bautheile) (for being our testers)
+- [Krutav](https://forums.macrumors.com/threads/2011-imac-graphics-card-upgrade.1596614/post-30941047) (Dell vBIOS injection through OpenCore on the ROMless HP FirePro M4000)
