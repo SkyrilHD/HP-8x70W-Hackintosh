@@ -181,7 +181,7 @@ The following steps are for those who want to run Monterey:
 
 4. Nagivate to `NVRAM > 7C436110-AB2A-4BBB-A880-FE41995C9F82` and change `csr-active-config` from `00000000` to `00080000`
 
-After installing Monterey, you need to install the Post-Install Volume Patch using [OpenCore Legacy Patcher](https://github.com/dortania/OpenCore-Legacy-Patcher/releases) to patch the NVIDIA graphics kexts back to Monterey. Keep in mind that you'll lose System Integrity Protection and the ability to apply Delta OTA updates for doing this.
+After installing Monterey, you need to install the Post-Install Volume Patch using [GeForce Kepler Patcher](https://github.com/chris1111/Geforce-Kepler-patcher) to patch the NVIDIA graphics kexts back to Monterey. Keep in mind that you'll lose System Integrity Protection and the ability to apply Delta OTA updates for doing this.
 The patch needs to be reapplied after every macOS update.
 
 AMD users won't need to apply any root patches, as macOS currently still includes drivers for all GCN based AMD GPUs
