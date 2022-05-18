@@ -18,7 +18,7 @@ Tested on:
 | Screen | 1080p TN-Panel  | |
 | WiFi | Azureware AW-CE123H (BCM94352HMB) | BCM943224HMS |
 | Bluetooth | HP BCM20702MD |
-| macOS |  | 11.6.3 (Big Sur) |
+| macOS | Monterey | Big Sur |
 
 ## Working features
 
