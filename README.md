@@ -4,7 +4,7 @@
 [![GitHub release](https://img.shields.io/github/tag/SkyrilHD/HP-8570W-Hackintosh.svg)](https://github.com/SkyrilHD/HP-8570W-Hackintosh/releases/)
 [![GitHub issues](https://img.shields.io/github/issues/SkyrilHD/HP-8570W-Hackintosh.svg)](https://github.com/SkyrilHD/HP-8570W-Hackintosh/issues/)
 
-### Before you give this EFI a try, make sure you read [this](#Settings-for-NVIDIA-GPUs) and [this](#Generating-your-own-serial-and-Editing-ROM)!
+### Before you give this EFI a try, make sure you read [this](#Monterey-(NVIDIA-GPUs)) and [this](#Generating-your-own-serial-and-Editing-ROM)!
 
 This repo includes an OpenCore EFI for 8570W and 8770W.
 
@@ -134,48 +134,9 @@ Some cards however have their country code hardcoded to the module in which the 
 
 * Smart Card: Disabled
 
-## Settings for NVIDIA GPUs
+## Monterey (NVIDIA GPUs)
 
-For those running an NVIDIA GPU, you'll need to the following before attempting to boot the EFI:
-
-1. open the config.plist and navigate to the following section:
-
-		<key>PciRoot(0x0)/Pci(0x1,0x0)/Pci(0x0,0x0)</key>
-			<dict>
-    			<key>shikigva</key>
-    			<integer>80</integer>
-    			<key>unfairgva</key>
-    			<integer>1</integer>
-    			<key>rebuild-device-tree</key>
-    			<integer>1</integer>
-    			<key>agdpmod</key>
-    			<string>pikera</string>
-    			<key>CAIL,CAIL_DisableDrmdmaPowerGating</key>
-    			<data>AQAAAA==</data>
-    			<key>CAIL,CAIL_DisableGfxCGPowerGating</key>
-    			<data>AQAAAA==</data>
-    			<key>CAIL,CAIL_DisableUVDPowerGating</key>
-    			<data>AQAAAA==</data>
-    			<key>CAIL,CAIL_DisableVCEPowerGating</key>
-    			<data>AQAAAA==</data>
-    			<key>connectors</key>
-				<data>AgAAAEAAAAAJCQEAAAAAABAAAAUAAAAAAAQAAAQDAAAACQIAAAAAABECAQEAAAAAAAQAAAQDAAAACQMAAAAAACEDAgIAAAAAAAgAAAQCAAAAAQQAAAAAABIEAwMAAAAA</data>
-    			<key>applbkl</key>
-    			<data>AQAAAA==</data>
-    			<key>applbkl-name</key>
-    			<data>RjE0VHh4eHgA</data>
-    			<key>applbkl-data</key>
-    			<data>ABEAAAAEAAsAEAAUABoAIwArADQAPwBOAGIAeQCUALUA2gD/</data>
-				<key>ATY,bin_image</key>
-				<data>**too long to include in the readme**</data>
-				<key>#@0,built-in</key>
-				<string></string>
-				<key>#@0,backlight-control</key>
-				<data>AQAAAA==</data>
-
-2. Add a `#` in front of every key from `shikigva` to `ATY,bin_image` to outcomment all the AMD patches and remove the `#` from `#@0,built-in` and `#@0,backlight-control`
-
-The following steps are for those who want to run Monterey:
+For those using an NVIDIA GPU wanting to run Monterey:
 
 3. Navigate to `Kernel > Security` and change `SecureBootModel` to `Disabled`
 
@@ -184,7 +145,7 @@ The following steps are for those who want to run Monterey:
 After installing Monterey, you need to install the Post-Install Volume Patch using [GeForce Kepler Patcher](https://github.com/chris1111/Geforce-Kepler-patcher) to patch the NVIDIA graphics kexts back to Monterey. Keep in mind that you'll lose System Integrity Protection and the ability to apply Delta OTA updates for doing this.
 The patch needs to be reapplied after every macOS update.
 
-AMD users won't need to apply any root patches, as macOS currently still includes drivers for all GCN based AMD GPUs
+AMD users won't need to do any of the steps above, as macOS currently still natively supports all GCN based AMD GPUs.
 
 ## Credits
 
