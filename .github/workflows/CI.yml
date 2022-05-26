@@ -8,8 +8,8 @@ env:
   PROJECT_TYPE: KEXT
 
 jobs:
-  build:
-    name: Build
+  build-nvidia:
+    name: Build (NVIDIA)
     runs-on: macos-latest
     env:
       JOB_TYPE: BUILD
@@ -17,8 +17,36 @@ jobs:
       - name: Build
         uses: actions/checkout@v2
       - run: echo "TAG_VER=${GITHUB_REF/refs\/tags\/v/}" >> $GITHUB_ENV
-      - run: mkdir Output && zip --exclude '*.git*' --exclude '*.github*' --exclude '*Output*' -r -X "Output/${{ github.event.repository.name }}-${TAG_VER}.zip" .  
+      - run: plutil -remove "DeviceProperties"."Add"."PciRoot(0x0)/Pci(0x1,0x0)/Pci(0x0,0x0)" EFI/OC/config.plist
+      - run: plutil -insert "DeviceProperties"."Add"."PciRoot(0x0)/Pci(0x1,0x0)/Pci(0x0,0x0)" -xml "<dict><key>@0,built-in</key><string></string><key>@0,backlight-control</key><data>AQAAAA==</data></dict>" EFI/OC/config.plist
+      - run: mkdir Output && zip --exclude '*.git*' --exclude '*.github*' --exclude '*Output*' -r -X "Output/${{ github.event.repository.name }}-${TAG_VER}-NVIDIA.zip" .  
       
+      - name: Upload to Artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: Artifacts
+          path: Output/*.zip
+          
+      - name: Upload to Release
+        if: github.event_name == 'release'
+        uses: svenstaro/upload-release-action@e74ff71f7d8a4c4745b560a485cc5fdb9b5b999d
+        with:
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          file: Output/*.zip
+          tag: ${{ github.ref }}
+          file_glob: true
+
+  build-amd:
+    name: Build (AMD)
+    runs-on: macos-latest
+    env:
+      JOB_TYPE: BUILD
+    steps:
+      - name: Build
+        uses: actions/checkout@v2
+      - run: echo "TAG_VER=${GITHUB_REF/refs\/tags\/v/}" >> $GITHUB_ENV
+      - run: mkdir Output && zip --exclude '*.git*' --exclude '*.github*' --exclude '*Output*' -r -X "Output/${{ github.event.repository.name }}-${TAG_VER}-AMD.zip" .  
+
       - name: Upload to Artifacts
         uses: actions/upload-artifact@v2
         with:
