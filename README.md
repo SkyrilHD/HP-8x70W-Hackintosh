@@ -144,7 +144,7 @@ Some cards however have their country code hardcoded to the module in which the 
 
 For those using an NVIDIA GPU wanting to run Monterey:
 
-3. Navigate to `Kernel > Security` and change `SecureBootModel` to `Disabled`
+3. Navigate to `Misc > Security` and change `SecureBootModel` to `Disabled`
 
 4. Nagivate to `NVRAM > 7C436110-AB2A-4BBB-A880-FE41995C9F82` and change `csr-active-config` from `00000000` to `00080000`
 
