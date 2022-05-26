@@ -144,9 +144,9 @@ Some cards however have their country code hardcoded to the module in which the 
 
 For those using an NVIDIA GPU wanting to run Monterey:
 
-3. Navigate to `Misc > Security` and change `SecureBootModel` to `Disabled`
+1. Navigate to `Misc > Security` and change `SecureBootModel` to `Disabled`
 
-4. Nagivate to `NVRAM > 7C436110-AB2A-4BBB-A880-FE41995C9F82` and change `csr-active-config` from `00000000` to `00080000`
+2. Nagivate to `NVRAM > 7C436110-AB2A-4BBB-A880-FE41995C9F82` and change `csr-active-config` from `00000000` to `00080000`
 
 After installing Monterey, you need to install the Post-Install Volume Patch using [GeForce Kepler Patcher](https://github.com/chris1111/Geforce-Kepler-patcher) to patch the NVIDIA graphics kexts back to Monterey. Keep in mind that you'll lose System Integrity Protection and the ability to apply Delta OTA updates for doing this.
 The patch needs to be reapplied after every macOS update.
