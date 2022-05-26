@@ -6,19 +6,25 @@
 
 ### Before you give this EFI a try, make sure you read [this](#Monterey-(NVIDIA-GPUs)) and [this](#Generating-your-own-serial-and-Editing-ROM)!
 
-This repo includes an OpenCore EFI for 8570W and 8770W.
+This repo includes an OpenCore EFI for the 8570W and 8770W with the 1080p TN display. **DreamColor IPS displays are NOT supported!**
+
+### Supported configurations:
+
+NVIDIA: Quadro K1000M-K4000M / K1100M-K4100M
+
+AMD: FirePro M4000
 
 Tested on:
 
-| Specs | 8770W ([@HansHubertHass](https://github.com/HansHubertHass)) | 8570W ([@Bautheile](https://github.com/Bautheile)) |
-| -- | -- | -- |
-| CPU | Intel Core i5-3360M | Intel Core i7-3840QM |
-| GPU | AMD FirePro M4000 | Nvidia Quadro K1000M | 
-| RAM | 8 GB 1600 MHz DDR3  | 32 GB 1600 MHz DDR3 |
-| Screen | 1080p TN-Panel  | |
-| WiFi | Azureware AW-CE123H (BCM94352HMB) | BCM943224HMS |
+| Specs | 8770W ([@HansHubertHass](https://twitter.com/MacGen2)) | 8570W ([@HansHubertHass](https://twitter.com/MacGen2)) | 8570W ([@Bautheile](https://github.com/Bautheile)) |
+| -- | -- | -- | -- |
+| CPU | Intel Core i5-3360M | Intel Core i7-3740QM | Intel Core i7-3840QM |
+| GPU | AMD FirePro M4000 | Nvidia Quadro K1000M | Nvidia Quadro K1000M | 
+| RAM | 8 GB 1600 MHz DDR3 | 8 GB 1600 MHz DDR3 | 32 GB 1600 MHz DDR3 |
+| Screen | 1080p TN-Panel  | | |
+| WiFi | Azureware AW-CE123H (BCM94352HMB) | Intel Centrino Advanced-N 6200 | BCM943224HMS |
 | Bluetooth | HP BCM20702MD |
-| macOS | Monterey | Big Sur |
+| macOS | Monterey | Catalina | Big Sur |
 
 ## Working features
 
