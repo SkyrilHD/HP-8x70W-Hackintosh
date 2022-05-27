@@ -10,7 +10,7 @@ This repo includes an OpenCore EFI for the 8570W and 8770W with the 1080p TN dis
 
 ### Supported configurations:
 
-NVIDIA: Quadro K1000M-K4000M / K1100M-K4100M ([Check here](#monterey-nvidia-gpus))
+NVIDIA: Quadro K1000M-K5000M / K1100M-K5100M ([Check here](#monterey-nvidia-gpus))
 
 AMD: FirePro M4000
 
@@ -22,7 +22,7 @@ Tested on:
 | GPU | AMD FirePro M4000 | Nvidia Quadro K1000M | Nvidia Quadro K1000M | 
 | RAM | 8 GB 1600 MHz DDR3 | 8 GB 1600 MHz DDR3 | 32 GB 1600 MHz DDR3 |
 | Screen | 1080p TN-Panel  | | |
-| WiFi | Azureware AW-CE123H (BCM94352HMB) | Intel Centrino Advanced-N 6200 | BCM943224HMS |
+| WiFi | Intel Centrino Advanced-N 6200 | Azureware AW-CE123H (BCM94352HMB) | BCM943224HMS |
 | Bluetooth | HP BCM20702MD |
 | macOS | Monterey | Catalina | Big Sur |
 
@@ -43,7 +43,6 @@ Tested on:
 - Sleep
 - TrackPoint
 - Power Management
-- (NVIDIA) Internal Display shows as internal
 
 ## Known Issues / not working
 
