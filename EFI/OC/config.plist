@@ -339,7 +339,7 @@
 				<key>shikigva</key>
 				<integer>80</integer>
 				<key>unfairgva</key>
-				<integer>1</integer>
+				<integer>7</integer>
 				<key>rebuild-device-tree</key>
 				<integer>1</integer>
 				<key>agdpmod</key>
