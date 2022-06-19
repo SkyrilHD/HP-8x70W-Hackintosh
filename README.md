@@ -1,31 +1,32 @@
-# HP 8570W Hackintosh
+# HP 8x70W Hackintosh
 
 [![OpenCore Version](https://img.shields.io/badge/OpenCore-0.8.1-green.svg)](https://github.com/SkyrilHD/HP-8570W-Hackintosh/)
 [![GitHub release](https://img.shields.io/github/tag/SkyrilHD/HP-8570W-Hackintosh.svg)](https://github.com/SkyrilHD/HP-8570W-Hackintosh/releases/)
 [![GitHub issues](https://img.shields.io/github/issues/SkyrilHD/HP-8570W-Hackintosh.svg)](https://github.com/SkyrilHD/HP-8570W-Hackintosh/issues/)
 
-### Before you give this EFI a try, make sure you read [this](https://github.com/SkyrilHD/HP-8570W-Hackintosh/issues/10), [this](#BIOS-versions) and [this](#Generating-your-own-serial-and-Editing-ROM)!
+### Before you give this EFI a try, make sure you read [this](#Generating-your-own-serial-and-Editing-ROM)!
 
-This repo includes an OpenCore EFI for 8570W. If anyone has an 8770W, we would like to hear a feedback [here](https://github.com/SkyrilHD/HP-8570W-Hackintosh/issues/14).
+This repo includes an OpenCore EFI for the 8570W and 8770W with the 1080p TN display. **DreamColor IPS displays are NOT supported!**
 
-### This EFI only works on NVIDIA GPUs and TN-Panel. DreamColor screens will not be supported!
+### Supported configurations:
 
-AMD FirePro M4000 users can check [here](https://github.com/SkyrilHD/HP-8570W-Hackintosh/discussions/20).
+NVIDIA: Quadro K1000M-K5000M / K1100M-K5100M ([Check here](#monterey-nvidia-gpus))
+
+AMD: FirePro M4000
 
 Tested on:
 
-| Specs | Laptop 1 ([@HansHubertHass](https://github.com/HansHubertHass)) | Laptop 2 ([@Bautheile](https://github.com/Bautheile)) |
-| -- | -- | -- |
-| CPU | Intel Core i5-3360M | Intel Core i7-3840QM |
-| GPU | Nvidia Quadro K1000M  | |
-| RAM | 8 GB 1600 MHz DDR3  | 32 GB 1600 MHz DDR3 |
-| Screen | 1080p TN-Panel  | |
-| WiFi | Azureware AW-CE123H (BCM94352HMB) | BCM943224HMS |
+| Specs | 8770W ([@HansHubertHass](https://twitter.com/MacGen2)) | 8570W ([@HansHubertHass](https://twitter.com/MacGen2)) | 8570W ([@Bautheile](https://github.com/Bautheile)) |
+| -- | -- | -- | -- |
+| CPU | Intel Core i5-3360M | Intel Core i7-3740QM | Intel Core i7-3840QM |
+| GPU | AMD FirePro M4000 | Nvidia Quadro K1000M | Nvidia Quadro K1000M | 
+| RAM | 8 GB 1600 MHz DDR3 | 8 GB 1600 MHz DDR3 | 32 GB 1600 MHz DDR3 |
+| Screen | 1080p TN-Panel  | | |
+| WiFi | Intel Centrino Advanced-N 6200 | Azureware AW-CE123H (BCM94352HMB) | BCM943224HMS |
 | Bluetooth | HP BCM20702MD |
-| macOS | 10.15.7 (Catalina) | 11.6.3 (Big Sur) |
-| BIOS | F.31 | F.61 |
+| macOS | Monterey | Catalina | Big Sur |
 
-## What works?
+## Working features
 
 - Audio
 - Battery readout
@@ -42,24 +43,30 @@ Tested on:
 - Sleep
 - TrackPoint
 - Power Management
-- (NVIDIA) Internal Display shows as internal
 
-## What doesn't work?
+## Known Issues / not working
 
-- (NVIDIA) Since the 8570W does not have an iGPU and this laptop only has a K1000M, there is no brightness control.
+- (NVIDIA) Brightness Control
+- (AMD) buggy Brightness Control
+- DRM (Apple TV+ + Netflix & Prime, when using Safari)
+- bottom trackpad buttons
 - Docking Station Audio
 - Fingerprint sensor
-- One of the left USB 2.0 ports due to a stupid implementation from HP (why did they map the interal bluetooth controller to the same port that an external device plugs into)
+- One of the left USB 2.0 ports is broken due to a stupid implementation from HP (why did they map the internal bluetooth controller to the same port that an external device plugs into)
 
 ## Download and Install
 
 Go to the [Releases](https://github.com/SkyrilHD/HP-8570W-Hackintosh/releases/) page of this repo and download the latest release. Then, copy the EFI folder to your EFI partition... That's it.
 
-## How to Install macOS Big Sur
+## How to Install macOS:
 
-There are two ways you can install Big Sur:
+There are two ways for installation:
 
-1. If you have an already working macOS, download the Installer from the App Store and make a bootable Installer with `createinstallmedia` by using this command in Terminal: `sudo /Applications/Install\ macOS\ Big\ Sur.app/Contents/Resources/createinstallmedia --volume /Volumes/MyVolume`
+1. If you have a working macOS install, download the Installer from the App Store and make a bootable Installer with `createinstallmedia` by using this command in Terminal: 
+
+    **Big Sur**: `sudo /Applications/Install\ macOS\ Big\ Sur.app/Contents/Resources/createinstallmedia --volume /Volumes/MyVolume`
+
+    **Monterey**: `sudo /Applications/Install\ macOS\ Monterey.app/Contents/Resources/createinstallmedia --volume /Volumes/MyVolume`
 
 2. If you are using Windows, use [macrecovery.py](https://github.com/acidanthera/OpenCorePkg/tree/master/Utilities/macrecovery) from the offical [OpenCore release package](https://github.com/acidanthera/OpenCorePkg/releases/). Follow this [guide](https://dortania.github.io/OpenCore-Install-Guide/installer-guide/winblows-install.html) to understand how it works.
 
@@ -101,7 +108,7 @@ Some cards however have their country code hardcoded to the module in which the 
 
 * SecureBoot: Disabled
 
-* Boot Mode: UEFI / UEFI Hybrid (with CSM)
+* Boot Mode: UEFI
 
 **Device Configurations**
     
@@ -135,14 +142,18 @@ Some cards however have their country code hardcoded to the module in which the 
 
 * Smart Card: Disabled
 
-## macOS Monterey
+## Monterey (NVIDIA GPUs)
 
-If you want to run Monterey, you have to disable secure boot and weaken SIP by going into:
+For those using an NVIDIA GPU wanting to run Monterey:
 
-`EFI/OC/config.plist > NVRAM > 7C436110-AB2A-4BBB-A880-FE41995C9F82` and changing `csr-active-config` from `00000000` to `030A0000`
+1. Navigate to `Misc > Security` and change `SecureBootModel` to `Disabled`
 
-After installing Monterey, you need to install the Post-Install Volume Patch using [OpenCore Legacy Patcher](https://github.com/dortania/OpenCore-Legacy-Patcher/releases) to patch the NVIDIA graphics kexts back to Monterey. Keep in mind that you'll lose System Integrity Protection and the ability to apply Delta OTA updates after doing this.
+2. Nagivate to `NVRAM > 7C436110-AB2A-4BBB-A880-FE41995C9F82` and change `csr-active-config` from `00000000` to `02080000`
+
+After installing Monterey, you need to install the Post-Install Volume Patch using [OpenCore Legacy Patcher](https://github.com/dortania/OpenCore-Legacy-Patcher/releases) to patch the NVIDIA graphics kexts back to Monterey. Keep in mind that you'll lose System Integrity Protection and the ability to apply Delta OTA updates for doing this.
 The patch needs to be reapplied after every macOS update.
+
+AMD users won't need to do any of the steps above, as macOS currently still natively supports all GCN based AMD GPUs.
 
 ## Credits
 
@@ -153,3 +164,4 @@ Thanks to:
 - Rehabman (for fixing keyboard issues and providing patches for 8x70)
 - [TECHNIKVERBOT](https://github.com/TECHNIKVERBOT) (for the idea to do this because there were no downloads outside of China :P)
 - [HansHubertHass](https://github.com/HansHubertHass) and [Bautheile](https://github.com/Bautheile) (for being our testers)
+- [Krutav](https://forums.macrumors.com/threads/2011-imac-graphics-card-upgrade.1596614/post-30941047) (Dell vBIOS injection through OpenCore on the ROMless HP FirePro M4000)
