@@ -47,6 +47,9 @@ Tested on:
 ## Known Issues / not working
 
 - (NVIDIA) Brightness Control
+- (AMD) buggy Brightness Control
+- DRM (Apple TV+ + Netflix & Prime, when using Safari)
+- bottom trackpad buttons
 - Docking Station Audio
 - Fingerprint sensor
 - One of the left USB 2.0 ports is broken due to a stupid implementation from HP (why did they map the internal bluetooth controller to the same port that an external device plugs into)
