@@ -1,4 +1,4 @@
-# HP 8570W Hackintosh
+# HP 8x70W Hackintosh
  
 ### WICHTIG: Lest und führt den [Abschnitt](#Erstellung-einer-eigenen-Seriennummer) durch, bevor ihr euch an die Konfiguration wagt!
 
