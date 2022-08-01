@@ -1542,6 +1542,8 @@
 				<string></string>
 				<key>Comment</key>
 				<string>AudioDxe.efi</string>
+				<key>LoadEarly</key>
+				<false/>
 			</dict>
 			<dict>
 				<key>Enabled</key>
@@ -1552,6 +1554,8 @@
 				<string></string>
 				<key>Comment</key>
 				<string>OpenCanopy.efi</string>
+				<key>LoadEarly</key>
+				<false/>
 			</dict>
 			<dict>
 				<key>Enabled</key>
@@ -1562,6 +1566,8 @@
 				<string></string>
 				<key>Comment</key>
 				<string>OpenHfsPlus.efi</string>
+				<key>LoadEarly</key>
+				<false/>
 			</dict>
 			<dict>
 				<key>Enabled</key>
@@ -1572,6 +1578,8 @@
 				<string></string>
 				<key>Comment</key>
 				<string>OpenLinuxBoot.efi</string>
+				<key>LoadEarly</key>
+				<false/>
 			</dict>
 			<dict>
 				<key>Enabled</key>
@@ -1582,6 +1590,8 @@
 				<string></string>
 				<key>Comment</key>
 				<string></string>
+				<key>LoadEarly</key>
+				<false/>
 			</dict>
 			<dict>
 				<key>Enabled</key>
@@ -1592,6 +1602,8 @@
 				<string></string>
 				<key>Comment</key>
 				<string>OpenRuntime.efi</string>
+				<key>LoadEarly</key>
+				<false/>
 			</dict>
 			<dict>
 				<key>Enabled</key>
@@ -1602,6 +1614,8 @@
 				<string></string>
 				<key>Comment</key>
 				<string>btrfs_x64.efi</string>
+				<key>LoadEarly</key>
+				<false/>
 			</dict>
 			<dict>
 				<key>Enabled</key>
@@ -1612,6 +1626,8 @@
 				<string></string>
 				<key>Comment</key>
 				<string>ext4_x64.efi</string>
+				<key>LoadEarly</key>
+				<false/>
 			</dict>
 		</array>
 		<key>Input</key>
