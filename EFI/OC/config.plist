@@ -1338,6 +1338,8 @@
 				<true/>
 				<key>Flavour</key>
 				<string>Auto</string>
+				<key>FullNvramAccess</key>
+				<false/>
 				<key>RealPath</key>
 				<false/>
 				<key>TextMode</key>
