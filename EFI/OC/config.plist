@@ -1440,7 +1440,7 @@
 				<key>SystemAudioVolume</key>
 				<data>Rg==</data>
 				<key>boot-args</key>
-				<string>-v keepsyms=1 debug=0x100</string>
+				<string>-v keepsyms=1 debug=0x100 revblock=media</string>
 				<key>csr-active-config</key>
 				<data>AAAAAA==</data>
 				<key>run-efi-updater</key>
