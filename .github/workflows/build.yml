@@ -16,7 +16,7 @@ jobs:
       - run: plutil -remove "DeviceProperties"."Add"."PciRoot(0x0)/Pci(0x1,0x0)/Pci(0x0,0x0)" EFI/OC/config.plist
       - run: plutil -insert "DeviceProperties"."Add"."PciRoot(0x0)/Pci(0x1,0x0)/Pci(0x0,0x0)" -xml "<dict><key>@0,built-in</key><string></string><key>@0,backlight-control</key><data>AQAAAA==</data></dict>" EFI/OC/config.plist
       - run: plutil -replace "NVRAM"."Add"."7C436110-AB2A-4BBB-A880-FE41995C9F82"."boot-args" -string "-v keepsyms=1 debug=0x100 ipc_control_port_options=0" EFI/OC/config.plist
-      - run: plutil -replace "NVRAM"."Add"."7C436110-AB2A-4BBB-A880-FE41995C9F82"."csr-active-config" -data 030A0000 EFI/OC/config.plist
+      - run: plutil -replace "NVRAM"."Add"."7C436110-AB2A-4BBB-A880-FE41995C9F82"."csr-active-config" -data AwoAAA== EFI/OC/config.plist
       - run: plutil -replace "Misc"."Security"."SecureBootModel" -string "Disabled" EFI/OC/config.plist
       - run: mkdir Output && zip --exclude '*.git*' --exclude '*.github*' --exclude '*Output*' -r -X "Output/${{ github.event.repository.name }}-${{github.ref_name}}-NVIDIA-Monterey.zip" .
 
@@ -69,7 +69,7 @@ jobs:
       - run: plutil -remove "DeviceProperties"."Add"."PciRoot(0x0)/Pci(0x1,0x0)/Pci(0x0,0x0)" EFI/OC/config.plist
       - run: plutil -insert "DeviceProperties"."Add"."PciRoot(0x0)/Pci(0x1,0x0)/Pci(0x0,0x0)" -xml "<dict><key>@0,built-in</key><string></string><key>@0,backlight-control</key><data>AQAAAA==</data></dict>" EFI/OC/config.plist
       - run: plutil -replace "NVRAM"."Add"."7C436110-AB2A-4BBB-A880-FE41995C9F82"."boot-args" -string "-v keepsyms=1 debug=0x100 amfi_get_out_of_my_way=1 ipc_control_port_options=0 revblock=media" EFI/OC/config.plist
-      - run: plutil -replace "NVRAM"."Add"."7C436110-AB2A-4BBB-A880-FE41995C9F82"."csr-active-config" -data 03080000 EFI/OC/config.plist
+      - run: plutil -replace "NVRAM"."Add"."7C436110-AB2A-4BBB-A880-FE41995C9F82"."csr-active-config" -data AwgAAA== EFI/OC/config.plist
       - run: plutil -replace "Misc"."Security"."SecureBootModel" -string "Disabled" EFI/OC/config.plist
       - run: mkdir Output && zip --exclude '*.git*' --exclude '*.github*' --exclude '*Output*' -r -X "Output/${{ github.event.repository.name }}-${{github.ref_name}}-NVIDIA-Ventura.zip" .
 
@@ -96,7 +96,7 @@ jobs:
         uses: actions/checkout@v3
       
       - run: plutil -replace "NVRAM"."Add"."7C436110-AB2A-4BBB-A880-FE41995C9F82"."boot-args" -string "-v keepsyms=1 debug=0x100 amfi_get_out_of_my_way=1 ipc_control_port_options=0" EFI/OC/config.plist
-      - run: plutil -replace "NVRAM"."Add"."7C436110-AB2A-4BBB-A880-FE41995C9F82"."csr-active-config" -data 03080000 EFI/OC/config.plist
+      - run: plutil -replace "NVRAM"."Add"."7C436110-AB2A-4BBB-A880-FE41995C9F82"."csr-active-config" -data AwgAAA== EFI/OC/config.plist
       - run: plutil -replace "Misc"."Security"."SecureBootModel" -string "Disabled" EFI/OC/config.plist
       - run: mkdir Output && zip --exclude '*.git*' --exclude '*.github*' --exclude '*Output*' -r -X "Output/${{ github.event.repository.name }}-${{github.ref_name}}-AMD-Ventura.zip" .  
 
