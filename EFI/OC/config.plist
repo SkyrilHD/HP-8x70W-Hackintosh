@@ -1583,7 +1583,7 @@
 			<key>AudioDevice</key>
 			<string>PciRoot(0x0)/Pci(0x1b,0x0)</string>
 			<key>AudioOutMask</key>
-			<integer>1</integer>
+			<integer>-1</integer>
 			<key>AudioSupport</key>
 			<true/>
 			<key>DisconnectHda</key>
