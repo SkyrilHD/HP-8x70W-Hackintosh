@@ -24,14 +24,6 @@
 			</dict>
 			<dict>
 				<key>Comment</key>
-				<string>SSDT-LIDpatch.aml</string>
-				<key>Enabled</key>
-				<true/>
-				<key>Path</key>
-				<string>SSDT-LIDpatch.aml</string>
-			</dict>
-			<dict>
-				<key>Comment</key>
 				<string>SSDT-PLUG.aml</string>
 				<key>Enabled</key>
 				<true/>
