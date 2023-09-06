@@ -2106,18 +2106,6 @@
 				<key>Enabled</key>
 				<true/>
 				<key>Path</key>
-				<string>OpenLinuxBoot.efi</string>
-				<key>Arguments</key>
-				<string></string>
-				<key>Comment</key>
-				<string>OpenLinuxBoot.efi</string>
-				<key>LoadEarly</key>
-				<false/>
-			</dict>
-			<dict>
-				<key>Enabled</key>
-				<true/>
-				<key>Path</key>
 				<string>ResetNvramEntry.efi</string>
 				<key>Arguments</key>
 				<string></string>
