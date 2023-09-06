@@ -48,14 +48,6 @@
 			</dict>
 			<dict>
 				<key>Comment</key>
-				<string>SSDT-UPRW.aml</string>
-				<key>Enabled</key>
-				<true/>
-				<key>Path</key>
-				<string>SSDT-UPRW.aml</string>
-			</dict>
-			<dict>
-				<key>Comment</key>
 				<string>SSDT-USB-Reset.aml</string>
 				<key>Enabled</key>
 				<false/>
