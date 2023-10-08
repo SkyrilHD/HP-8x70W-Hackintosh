@@ -1579,7 +1579,7 @@
 				<key>Base</key>
 				<string>_xcpm_bootstrap</string>
 				<key>Comment</key>
-				<string>XCPM for Ivy Bridge. macOS 10.15.7 - 11.3 beta by 5T33Z0</string>
+				<string>Enables XCPM for Ivy Bridge on macOS 10.15.7 to 12.0.1</string>
 				<key>Count</key>
 				<integer>1</integer>
 				<key>Enabled</key>
