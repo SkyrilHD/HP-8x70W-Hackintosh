@@ -2172,18 +2172,6 @@
 				<key>Path</key>
 				<string>OpenRuntime.efi</string>
 			</dict>
-			<dict>
-				<key>Enabled</key>
-				<true/>
-				<key>Path</key>
-				<string>ext4_x64.efi</string>
-				<key>Arguments</key>
-				<string></string>
-				<key>Comment</key>
-				<string>ext4_x64.efi</string>
-				<key>LoadEarly</key>
-				<false/>
-			</dict>
 		</array>
 		<key>Input</key>
 		<dict>
