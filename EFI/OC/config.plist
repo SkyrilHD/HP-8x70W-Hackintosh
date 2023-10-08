@@ -1413,6 +1413,8 @@
 				<string>Contents/Info.plist</string>
 			</dict>
 			<dict>
+				<key>Arch</key>
+				<string>Any</string>
 				<key>BundlePath</key>
 				<string>JMB38X.kext</string>
 				<key>Comment</key>
@@ -1421,8 +1423,6 @@
 				<true/>
 				<key>ExecutablePath</key>
 				<string>Contents/MacOS/JMB38X</string>
-				<key>Arch</key>
-				<string>Any</string>
 				<key>MaxKernel</key>
 				<string></string>
 				<key>MinKernel</key>
