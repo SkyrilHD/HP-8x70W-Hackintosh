@@ -1595,7 +1595,7 @@
 				<key>MaxKernel</key>
 				<string>22.99.99</string>
 				<key>MinKernel</key>
-				<string>19.00.00</string>
+				<string>19.0.0</string>
 				<key>Replace</key>
 				<data>jUPGPEI=</data>
 				<key>ReplaceMask</key>
