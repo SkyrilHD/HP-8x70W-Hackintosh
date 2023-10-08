@@ -32,27 +32,24 @@ Tested on:
 - Battery readout
 - Boot
 - Bluetooth
+- Brightness Control
 - Broadcom WiFi (incl. Handoff + AirDrop)
-- Docking Station (USB + DVI-D)
+- Docking Station
 - Ethernet
 - ExpressCard
 - GPU acceleration
-- Keyboard + Trackpad (incl. Magic TrackPad 2 emulation)
+- Keyboard
 - SD-Card (if disabling IEEE 1394)
 - Firewire / IEEE 1394 (if disabling Flash media reader)
 - Sleep
+- Trackpad
 - TrackPoint
 - Power Management
 
 ## Known Issues / not working
 
-- (NVIDIA) Brightness Control
-- (AMD) buggy Brightness Control
 - DRM (Apple TV+ + Netflix & Prime, when using Safari)
-- bottom trackpad buttons
-- Docking Station Audio
 - Fingerprint sensor
-- One of the left USB 2.0 ports is broken due to a stupid implementation from HP (why did they map the internal bluetooth controller to the same port that an external device plugs into)
 
 ## Download and Install
 
