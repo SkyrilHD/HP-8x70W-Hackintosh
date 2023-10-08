@@ -6,19 +6,16 @@ on:
     types: [published]
 
 jobs:
-  build-monterey-nvidia:
-    name: Build (NVIDIA (Monterey))
+  build-nvidia:
+    name: Build (NVIDIA)
     runs-on: macos-latest
     steps:
       - name: Build
         uses: actions/checkout@v3
 
       - run: plutil -remove "DeviceProperties"."Add"."PciRoot(0x0)/Pci(0x1,0x0)/Pci(0x0,0x0)" EFI/OC/config.plist
-      - run: plutil -insert "DeviceProperties"."Add"."PciRoot(0x0)/Pci(0x1,0x0)/Pci(0x0,0x0)" -xml "<dict><key>@0,built-in</key><string></string><key>@0,backlight-control</key><data>AQAAAA==</data></dict>" EFI/OC/config.plist
-      - run: plutil -replace "NVRAM"."Add"."7C436110-AB2A-4BBB-A880-FE41995C9F82"."boot-args" -string "-v keepsyms=1 debug=0x100 ipc_control_port_options=0" EFI/OC/config.plist
-      - run: plutil -replace "NVRAM"."Add"."7C436110-AB2A-4BBB-A880-FE41995C9F82"."csr-active-config" -data AwoAAA== EFI/OC/config.plist
-      - run: plutil -replace "Misc"."Security"."SecureBootModel" -string "Disabled" EFI/OC/config.plist
-      - run: mkdir Output && zip --exclude '*.git*' --exclude '*.github*' --exclude '*Output*' -r -X "Output/${{ github.event.repository.name }}-${{github.ref_name}}-NVIDIA-Monterey.zip" .
+      - run: plutil -insert "DeviceProperties"."Add"."PciRoot(0x0)/Pci(0x1,0x0)/Pci(0x0,0x0)" -xml "<dict><key>@0,AAPL,boot-display</key><data>AQ==</data><key>@0,NVMT</key><data>DgN/IAAAAABACwgH4AtwC5ALAAA8BwsHEQcAAPCnIRQAAAABrwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD//wAAAAAAAAAAAAABAAAAAAAA/wAAAAC8AgFaCgQAAAACAABACwgHQAsIBw==</data><key>@0,backlight-control</key><data>AQAAAA==</data><key>@0,built-in</key><data>AQAAAA==</data><key>@0,compatible</key><string>NVDA,NVMac</string><key>@0,connector-type</key><data>AAgAAA==</data><key>@0,device_type</key><string>display</string><key>@0,display-cfg</key><data>//82AA==</data><key>@0,display-type</key><string>LCD</string><key>@0,name</key><string>NVDA,Display-A</string><key>@0,pwm-info</key><data>AhgAZJBZAgAIUgAApRwAAAAEAAABAAAA</data><key>@0,use-backlight-blanking</key><data></data><key>@1,can-hot-plug</key><data></data><key>@1,compatible</key><string>NVDA,NVMac</string><key>@1,connector-type</key><data>AAgAAA==</data><key>@1,device_type</key><string>display</string><key>@1,display-cfg</key><data>/////w==</data><key>@1,name</key><string>NVDA,Display-B</string><key>AAPL,aux-power-connected</key><data>AQAAAA==</data><key>AAPL,backlight-control</key><data>AQAAAA==</data><key>AAPL,gray-page</key><data>AQAAAA==</data><key>AAPL00,blackscreen.preferences</key><data>AAAACA==</data><key>AAPL00,inverter</key><data>AAAAAA==</data><key>AAPL01,blackscreen.preferences</key><data>AAAACA==</data><key>NVPM</key><data>AQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</data><key>agdpmod</key><string>vit9696</string><key>hda-gfx</key><string>onboard-1</string><key>shikigva</key><integer>256</integer><key>applbkl</key><integer>1</integer></dict>" EFI/OC/config.plist
+      - run: mkdir Output && zip --exclude '*.git*' --exclude '*.github*' --exclude '*Output*' -r -X "Output/${{ github.event.repository.name }}-${{github.ref_name}}-NVIDIA.zip" .
 
       - name: Upload to Artifacts
         uses: actions/upload-artifact@v2
@@ -35,70 +32,14 @@ jobs:
           tag: ${{ github.ref }}
           file_glob: true
 
-  build-monterey-amd:
-    name: Build (AMD (Monterey))
+  build-amd:
+    name: Build (AMD)
     runs-on: macos-latest
     steps:
       - name: Build
         uses: actions/checkout@v3
       
-      - run: mkdir Output && zip --exclude '*.git*' --exclude '*.github*' --exclude '*Output*' -r -X "Output/${{ github.event.repository.name }}-${{github.ref_name}}-AMD-Monterey.zip" .  
-
-      - name: Upload to Artifacts
-        uses: actions/upload-artifact@v2
-        with:
-          name: Artifacts
-          path: Output/*.zip
-
-      - name: Upload to Release
-        if: github.event_name == 'release'
-        uses: svenstaro/upload-release-action@e74ff71f7d8a4c4745b560a485cc5fdb9b5b999d
-        with:
-          repo_token: ${{ secrets.GITHUB_TOKEN }}
-          file: Output/*.zip
-          tag: ${{ github.ref }}
-          file_glob: true
-
-  build-ventura-nvidia:
-    name: Build (NVIDIA (Ventura))
-    runs-on: macos-latest
-    steps:
-      - name: Build
-        uses: actions/checkout@v3
-
-      - run: plutil -remove "DeviceProperties"."Add"."PciRoot(0x0)/Pci(0x1,0x0)/Pci(0x0,0x0)" EFI/OC/config.plist
-      - run: plutil -insert "DeviceProperties"."Add"."PciRoot(0x0)/Pci(0x1,0x0)/Pci(0x0,0x0)" -xml "<dict><key>@0,built-in</key><string></string><key>@0,backlight-control</key><data>AQAAAA==</data></dict>" EFI/OC/config.plist
-      - run: plutil -replace "NVRAM"."Add"."7C436110-AB2A-4BBB-A880-FE41995C9F82"."boot-args" -string "-v keepsyms=1 debug=0x100 amfi_get_out_of_my_way=1 ipc_control_port_options=0 revblock=media" EFI/OC/config.plist
-      - run: plutil -replace "NVRAM"."Add"."7C436110-AB2A-4BBB-A880-FE41995C9F82"."csr-active-config" -data AwgAAA== EFI/OC/config.plist
-      - run: plutil -replace "Misc"."Security"."SecureBootModel" -string "Disabled" EFI/OC/config.plist
-      - run: mkdir Output && zip --exclude '*.git*' --exclude '*.github*' --exclude '*Output*' -r -X "Output/${{ github.event.repository.name }}-${{github.ref_name}}-NVIDIA-Ventura.zip" .
-
-      - name: Upload to Artifacts
-        uses: actions/upload-artifact@v2
-        with:
-          name: Artifacts
-          path: Output/*.zip
-
-      - name: Upload to Release
-        if: github.event_name == 'release'
-        uses: svenstaro/upload-release-action@e74ff71f7d8a4c4745b560a485cc5fdb9b5b999d
-        with:
-          repo_token: ${{ secrets.GITHUB_TOKEN }}
-          file: Output/*.zip
-          tag: ${{ github.ref }}
-          file_glob: true
-
-  build-ventura-amd:
-    name: Build (AMD (Ventura))
-    runs-on: macos-latest
-    steps:
-      - name: Build
-        uses: actions/checkout@v3
-      
-      - run: plutil -replace "NVRAM"."Add"."7C436110-AB2A-4BBB-A880-FE41995C9F82"."boot-args" -string "-v keepsyms=1 debug=0x100 amfi_get_out_of_my_way=1 ipc_control_port_options=0" EFI/OC/config.plist
-      - run: plutil -replace "NVRAM"."Add"."7C436110-AB2A-4BBB-A880-FE41995C9F82"."csr-active-config" -data AwgAAA== EFI/OC/config.plist
-      - run: plutil -replace "Misc"."Security"."SecureBootModel" -string "Disabled" EFI/OC/config.plist
-      - run: mkdir Output && zip --exclude '*.git*' --exclude '*.github*' --exclude '*Output*' -r -X "Output/${{ github.event.repository.name }}-${{github.ref_name}}-AMD-Ventura.zip" .  
+      - run: mkdir Output && zip --exclude '*.git*' --exclude '*.github*' --exclude '*Output*' -r -X "Output/${{ github.event.repository.name }}-${{github.ref_name}}-AMD.zip" .  
 
       - name: Upload to Artifacts
         uses: actions/upload-artifact@v2
