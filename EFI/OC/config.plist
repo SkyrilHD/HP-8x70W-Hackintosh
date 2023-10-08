@@ -1431,6 +1431,8 @@
 				<string>Contents/Info.plist</string>
 			</dict>
 			<dict>
+				<key>Arch</key>
+				<string>Any</string>
 				<key>BundlePath</key>
 				<string>HSSDBlockStorage.kext</string>
 				<key>Comment</key>
@@ -1439,8 +1441,6 @@
 				<true/>
 				<key>ExecutablePath</key>
 				<string>Contents/MacOS/HSSDBlockStorage</string>
-				<key>Arch</key>
-				<string>Any</string>
 				<key>MaxKernel</key>
 				<string></string>
 				<key>MinKernel</key>
