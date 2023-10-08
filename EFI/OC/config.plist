@@ -1882,6 +1882,8 @@
 			<dict>
 				<key>OCLP-Settings</key>
 				<string> -allow_fv -allow_amfi</string>
+				<key>revpatch</key>
+				<string>sbvmm,f16c</string>
 				<key>rtc-blacklist</key>
 				<data></data>
 			</dict>
