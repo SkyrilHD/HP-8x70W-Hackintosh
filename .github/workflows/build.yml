@@ -6,8 +6,8 @@ on:
     types: [published]
 
 jobs:
-  build-nvidia:
-    name: Build (NVIDIA)
+  build-nvidia-unsupported:
+    name: Build for unsupported OS (NVIDIA)
     runs-on: macos-latest
     steps:
       - name: Build
@@ -32,8 +32,8 @@ jobs:
           tag: ${{ github.ref }}
           file_glob: true
 
-  build-amd:
-    name: Build (AMD)
+  build-amd-unsupported:
+    name: Build for unsupported OS (AMD)
     runs-on: macos-latest
     steps:
       - name: Build
@@ -56,4 +56,96 @@ jobs:
           tag: ${{ github.ref }}
           file_glob: true
 
+  build-nvidia-supported:
+    name: Build for supported OS (NVIDIA)
+    runs-on: macos-latest
+    steps:
+      - name: Build
+        uses: actions/checkout@v3
 
+      # add NVIDIA properties
+      - run: plutil -remove "DeviceProperties"."Add"."PciRoot(0x0)/Pci(0x1,0x0)/Pci(0x0,0x0)" EFI/OC/config.plist
+      - run: plutil -insert "DeviceProperties"."Add"."PciRoot(0x0)/Pci(0x1,0x0)/Pci(0x0,0x0)" -xml "<dict><key>@0,AAPL,boot-display</key><data>AQ==</data><key>@0,NVMT</key><data>DgN/IAAAAABACwgH4AtwC5ALAAA8BwsHEQcAAPCnIRQAAAABrwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD//wAAAAAAAAAAAAABAAAAAAAA/wAAAAC8AgFaCgQAAAACAABACwgHQAsIBw==</data><key>@0,backlight-control</key><data>AQAAAA==</data><key>@0,built-in</key><data>AQAAAA==</data><key>@0,compatible</key><string>NVDA,NVMac</string><key>@0,connector-type</key><data>AAgAAA==</data><key>@0,device_type</key><string>display</string><key>@0,display-cfg</key><data>//82AA==</data><key>@0,display-type</key><string>LCD</string><key>@0,name</key><string>NVDA,Display-A</string><key>@0,pwm-info</key><data>AhgAZJBZAgAIUgAApRwAAAAEAAABAAAA</data><key>@0,use-backlight-blanking</key><data></data><key>@1,can-hot-plug</key><data></data><key>@1,compatible</key><string>NVDA,NVMac</string><key>@1,connector-type</key><data>AAgAAA==</data><key>@1,device_type</key><string>display</string><key>@1,display-cfg</key><data>/////w==</data><key>@1,name</key><string>NVDA,Display-B</string><key>AAPL,aux-power-connected</key><data>AQAAAA==</data><key>AAPL,backlight-control</key><data>AQAAAA==</data><key>AAPL,gray-page</key><data>AQAAAA==</data><key>AAPL00,blackscreen.preferences</key><data>AAAACA==</data><key>AAPL00,inverter</key><data>AAAAAA==</data><key>AAPL01,blackscreen.preferences</key><data>AAAACA==</data><key>NVPM</key><data>AQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</data><key>agdpmod</key><string>vit9696</string><key>hda-gfx</key><string>onboard-1</string><key>shikigva</key><integer>256</integer><key>applbkl</key><integer>1</integer></dict>" EFI/OC/config.plist
+      
+      # disable Sonoma specific patches
+      - run: plutil -replace "Booter"."Patch".0."Enabled" -bool false EFI/OC/config.plist
+      - run: plutil -replace "Kernel"."Add".19."Enabled" -bool false EFI/OC/config.plist
+      - run: plutil -replace "Kernel"."Add".20."Enabled" -bool false EFI/OC/config.plist
+      - run: plutil -replace "Kernel"."Add".21."Enabled" -bool false EFI/OC/config.plist
+      - run: plutil -replace "Kernel"."Add".31."Enabled" -bool false EFI/OC/config.plist
+      - run: plutil -replace "Kernel"."Add".32."Enabled" -bool false EFI/OC/config.plist
+      - run: plutil -replace "Kernel"."Add".33."Enabled" -bool false EFI/OC/config.plist
+      - run: plutil -replace "Kernel"."Add".34."Enabled" -bool false EFI/OC/config.plist
+      - run: plutil -replace "Kernel"."Add".35."Enabled" -bool false EFI/OC/config.plist
+      - run: plutil -replace "Kernel"."Add".36."Enabled" -bool false EFI/OC/config.plist
+      - run: plutil -replace "Kernel"."Patch".0."Enabled" -bool false EFI/OC/config.plist
+      - run: plutil -replace "Kernel"."Patch".1."Enabled" -bool false EFI/OC/config.plist
+      - run: plutil -replace "Kernel"."Patch".2."Enabled" -bool false EFI/OC/config.plist
+
+      # remove Sonoma specific boot-args
+      - run: plutil -replace "NVRAM"."Add"."7C436110-AB2A-4BBB-A880-FE41995C9F82"."boot-args" -string "" EFI/OC/config.plist
+
+      # enable SIP
+      - run: plutil -replace "NVRAM"."Add"."7C436110-AB2A-4BBB-A880-FE41995C9F82"."csr-active-config" -data AAAAAA== EFI/OC/config.plist
+
+      - run: mkdir Output && zip --exclude '*.git*' --exclude '*.github*' --exclude '*Output*' -r -X "Output/${{ github.event.repository.name }}-${{github.ref_name}}-NVIDIA.zip" .
+
+      - name: Upload to Artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: Artifacts
+          path: Output/*.zip
+
+      - name: Upload to Release
+        if: github.event_name == 'release'
+        uses: svenstaro/upload-release-action@e74ff71f7d8a4c4745b560a485cc5fdb9b5b999d
+        with:
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          file: Output/*.zip
+          tag: ${{ github.ref }}
+          file_glob: true
+
+  build-amd-supported:
+    name: Build for supported OS (AMD)
+    runs-on: macos-latest
+    steps:
+      - name: Build
+        uses: actions/checkout@v3
+      
+      # disable Sonoma specific patches
+      - run: plutil -replace "Booter"."Patch".0."Enabled" -bool false EFI/OC/config.plist
+      - run: plutil -replace "Kernel"."Add".19."Enabled" -bool false EFI/OC/config.plist
+      - run: plutil -replace "Kernel"."Add".20."Enabled" -bool false EFI/OC/config.plist
+      - run: plutil -replace "Kernel"."Add".21."Enabled" -bool false EFI/OC/config.plist
+      - run: plutil -replace "Kernel"."Add".31."Enabled" -bool false EFI/OC/config.plist
+      - run: plutil -replace "Kernel"."Add".32."Enabled" -bool false EFI/OC/config.plist
+      - run: plutil -replace "Kernel"."Add".33."Enabled" -bool false EFI/OC/config.plist
+      - run: plutil -replace "Kernel"."Add".34."Enabled" -bool false EFI/OC/config.plist
+      - run: plutil -replace "Kernel"."Add".35."Enabled" -bool false EFI/OC/config.plist
+      - run: plutil -replace "Kernel"."Add".36."Enabled" -bool false EFI/OC/config.plist
+      - run: plutil -replace "Kernel"."Patch".0."Enabled" -bool false EFI/OC/config.plist
+      - run: plutil -replace "Kernel"."Patch".1."Enabled" -bool false EFI/OC/config.plist
+      - run: plutil -replace "Kernel"."Patch".2."Enabled" -bool false EFI/OC/config.plist
+
+      # remove Sonoma specific boot-args
+      - run: plutil -replace "NVRAM"."Add"."7C436110-AB2A-4BBB-A880-FE41995C9F82"."boot-args" -string "" EFI/OC/config.plist
+
+      # enable SIP
+      - run: plutil -replace "NVRAM"."Add"."7C436110-AB2A-4BBB-A880-FE41995C9F82"."csr-active-config" -data AAAAAA== EFI/OC/config.plist
+
+      - run: mkdir Output && zip --exclude '*.git*' --exclude '*.github*' --exclude '*Output*' -r -X "Output/${{ github.event.repository.name }}-${{github.ref_name}}-AMD.zip" .  
+
+      - name: Upload to Artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: Artifacts
+          path: Output/*.zip
+
+      - name: Upload to Release
+        if: github.event_name == 'release'
+        uses: svenstaro/upload-release-action@e74ff71f7d8a4c4745b560a485cc5fdb9b5b999d
+        with:
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          file: Output/*.zip
+          tag: ${{ github.ref }}
+          file_glob: true
