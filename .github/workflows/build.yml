@@ -18,7 +18,7 @@ jobs:
       - run: mkdir Output && zip --exclude '*.git*' --exclude '*.github*' --exclude '*Output*' -r -X "Output/${{ github.event.repository.name }}-${{github.ref_name}}-NVIDIA-Sonoma.zip" .
 
       - name: Upload to Artifacts
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: Artifacts
           path: Output/*.zip
@@ -42,7 +42,7 @@ jobs:
       - run: mkdir Output && zip --exclude '*.git*' --exclude '*.github*' --exclude '*Output*' -r -X "Output/${{ github.event.repository.name }}-${{github.ref_name}}-AMD-Sonoma.zip" .  
 
       - name: Upload to Artifacts
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: Artifacts
           path: Output/*.zip
@@ -91,7 +91,7 @@ jobs:
       - run: mkdir Output && zip --exclude '*.git*' --exclude '*.github*' --exclude '*Output*' -r -X "Output/${{ github.event.repository.name }}-${{github.ref_name}}-NVIDIA-Catalina.zip" .
 
       - name: Upload to Artifacts
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: Artifacts
           path: Output/*.zip
@@ -136,7 +136,7 @@ jobs:
       - run: mkdir Output && zip --exclude '*.git*' --exclude '*.github*' --exclude '*Output*' -r -X "Output/${{ github.event.repository.name }}-${{github.ref_name}}-AMD-Catalina.zip" .  
 
       - name: Upload to Artifacts
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: Artifacts
           path: Output/*.zip
