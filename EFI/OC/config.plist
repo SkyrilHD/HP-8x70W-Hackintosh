@@ -522,7 +522,7 @@
 				<key>BaseSkip</key>
 				<integer>0</integer>
 				<key>Comment</key>
-				<string>change Method(GBTC,0,NotSerialized) to GBT4</string>
+				<string>change Method(ITLB,0,NotSerialized) to ITL1 (for G4)</string>
 				<key>Count</key>
 				<integer>0</integer>
 				<key>Enabled</key>
