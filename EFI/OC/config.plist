@@ -56,14 +56,6 @@
 			</dict>
 			<dict>
 				<key>Comment</key>
-				<string>SSDT-BATT-8570W.aml</string>
-				<key>Enabled</key>
-				<true/>
-				<key>Path</key>
-				<string>SSDT-BATT-8570W.aml</string>
-			</dict>
-			<dict>
-				<key>Comment</key>
 				<string>SSDT-BQRN.aml</string>
 				<key>Enabled</key>
 				<true/>
