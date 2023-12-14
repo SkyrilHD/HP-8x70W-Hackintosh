@@ -1,6 +1,6 @@
 # HP 8x70W Hackintosh
 
-[![OpenCore Version](https://img.shields.io/badge/OpenCore-0.8.1-green.svg)](https://github.com/SkyrilHD/HP-8570W-Hackintosh/)
+[![OpenCore Version](https://img.shields.io/badge/OpenCore-0.9.2-green.svg)](https://github.com/SkyrilHD/HP-8570W-Hackintosh/)
 [![GitHub release](https://img.shields.io/github/tag/SkyrilHD/HP-8570W-Hackintosh.svg)](https://github.com/SkyrilHD/HP-8570W-Hackintosh/releases/)
 [![GitHub issues](https://img.shields.io/github/issues/SkyrilHD/HP-8570W-Hackintosh.svg)](https://github.com/SkyrilHD/HP-8570W-Hackintosh/issues/)
 
@@ -32,27 +32,24 @@ Tested on:
 - Battery readout
 - Boot
 - Bluetooth
+- Brightness Control
 - Broadcom WiFi (incl. Handoff + AirDrop)
-- Docking Station (USB + DVI-D)
+- Docking Station
 - Ethernet
 - ExpressCard
 - GPU acceleration
-- Keyboard + Trackpad (incl. Magic TrackPad 2 emulation)
+- Keyboard
 - SD-Card (if disabling IEEE 1394)
 - Firewire / IEEE 1394 (if disabling Flash media reader)
 - Sleep
+- Trackpad
 - TrackPoint
 - Power Management
 
 ## Known Issues / not working
 
-- (NVIDIA) Brightness Control
-- (AMD) buggy Brightness Control
 - DRM (Apple TV+ + Netflix & Prime, when using Safari)
-- bottom trackpad buttons
-- Docking Station Audio
 - Fingerprint sensor
-- One of the left USB 2.0 ports is broken due to a stupid implementation from HP (why did they map the internal bluetooth controller to the same port that an external device plugs into)
 
 ## Download and Install
 
@@ -89,16 +86,6 @@ If you have the stock HP BCM943224HMS or a card based on the BCM94352HMB wifi ch
 Intel WiFi users will need remove AirportBrcmFixup.kext, replace it with [Airportitlwm](https://github.com/OpenIntelWireless/itlwm/releases) and do an OC snapshot with ProperTree to get WiFi working. If you want the full macOS experience with AirDrop, Handoff and all of that, replace the Intel WiFi card with a supported Broadcom one.
 
 Recommended WiFi cards: Azureware AW-CE123H, Dell DW1550
-
-#### Country Code for Broadcom Wireless Cards
-
-Some countries have different 5GHz bands and may not be supported for some. 
-You can specify other country codes like: US, DE, #a, etc by going into:
-
-- `EFI/OC/config.plist > DeviceProperties > Add > PciRoot(0x0)/Pci(0x1C,0x3)/Pci(0x0,0x0)` and rename/uncomment:
-- `#brcmfx-country` to `brcmfx-country` and set the desired value (**#a** is the preset value, replace with the country code that you need)
-
-Some cards however have their country code hardcoded to the module in which the setting causes macOS to either no longer boot or your wifi to stop working and you're pretty much out of luck at that point.
 
 ## BIOS settings
 
