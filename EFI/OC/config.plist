@@ -598,7 +598,7 @@
 				<key>BaseSkip</key>
 				<integer>0</integer>
 				<key>Comment</key>
-				<string>change Method (_Q08,0,N) to XQ08</string>
+				<string>Change Method (_Q08,0,N) to XQ08</string>
 				<key>Count</key>
 				<integer>0</integer>
 				<key>Enabled</key>
