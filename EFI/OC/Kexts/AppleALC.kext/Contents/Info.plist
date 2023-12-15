@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>BuildMachineOSBuild</key>
-	<string>23A344</string>
+	<string>21G726</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleExecutable</key>
@@ -17,7 +17,7 @@
 	<key>CFBundlePackageType</key>
 	<string>KEXT</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.8.7</string>
+	<string>1.8.8</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleSupportedPlatforms</key>
@@ -25,23 +25,23 @@
 		<string>MacOSX</string>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>1.8.7</string>
+	<string>1.8.8</string>
 	<key>DTCompiler</key>
 	<string>com.apple.compilers.llvm.clang.1_0</string>
 	<key>DTPlatformBuild</key>
-	<string></string>
+	<string>13F100</string>
 	<key>DTPlatformName</key>
 	<string>macosx</string>
 	<key>DTPlatformVersion</key>
-	<string>14.0</string>
+	<string>12.3</string>
 	<key>DTSDKBuild</key>
-	<string>23A334</string>
+	<string>21E226</string>
 	<key>DTSDKName</key>
-	<string>macosx14.0</string>
+	<string>macosx12.3</string>
 	<key>DTXcode</key>
-	<string>1500</string>
+	<string>1341</string>
 	<key>DTXcodeBuild</key>
-	<string>15A240d</string>
+	<string>13F100</string>
 	<key>IOKitPersonalities</key>
 	<dict>
 		<key>ALCUserClientProvider</key>
@@ -15483,10 +15483,10 @@
 					<integer>283902550</integer>
 					<key>ConfigData</key>
 					<data>
-					ASccAAEnHQABJx4QAScfQAIXHBACFx0QAhce
-					IQIXHwICFwwCAeccIAHnHREB5x5FAecfAQHX
-					HCkB1x3AAdceRAHXH0ABlxwwAZcdEAGXHqAB
-					lx+SAbccQAG3HRABtx4RAbcfAQG3DAI=
+					AZccMAGXHRABlx6gAZcfkgIXHBACFx0QAhce
+					IQIXHwICFwwCAbccQAG3HRABtx4RAbcfAQG3
+					DAIB5xwgAecdEQHnHkUB5x8BAUcc8AFHHREB
+					Rx4RAUcfQQFHDAI=
 					</data>
 					<key>FuncGroup</key>
 					<integer>1</integer>
@@ -15494,7 +15494,7 @@
 					<integer>68</integer>
 					<key>WakeConfigData</key>
 					<data>
-					AhcMAgG3DAI=
+					AhcMAgG3DAIBRwwC
 					</data>
 					<key>WakeVerbReinit</key>
 					<true/>
@@ -15719,7 +15719,7 @@
 					AwAAAA==
 					</data>
 					<key>Codec</key>
-					<string>SkyrilHD - IDT 92HD81B1X5 2</string>
+					<string>IDT 92HD81B1X5 by SkyrilHD for HP Elitebook 8x70 series</string>
 					<key>CodecID</key>
 					<integer>287143429</integer>
 					<key>ConfigData</key>
