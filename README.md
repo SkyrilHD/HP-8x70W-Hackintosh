@@ -147,6 +147,34 @@ For users who wish to run Monterey or a newer version:
 
   AMD users won't need to follow the earlier mentioned steps, as Monterey natively supports all GCN-based AMD GPUs. However, starting with Ventura, you will need to install the Post-Install Root Patch.
 
+## Faulty or degraded NVRAM
+
+If you encounter installation issues, it is crucial to check if the NVRAM works. You can do this by entering the following command in Terminal:
+
+```bash
+sudo nvram myvar="$(date)"
+```
+
+After executing the command, reboot your system and verify if the value is stored in NVRAM by entering:
+
+```bash
+nvram myvar
+```
+
+If you get an error, it indicates that your 8x70W may have a faulty/degraded NVRAM. To finish the installation, you'll need to enable emulated NVRAM.
+
+1. Enable DisableVariableWrite in `config.plist > Booter > Quirks`
+2. Enable LegacyOverwrite in `config.plist > NVRAM`
+3. Add OpenVariableRuntimeDxe from [OpenCorePkg](https://github.com/acidanthera/OpenCorePkg/releases/)
+4. Add OpenVariableRuntimeDxe before OpenRuntime in the config
+5. Enable LoadEarly on OpenVariableRuntimeDxe and OpenRuntime
+
+Now, you can proceed with the installation.
+
+Once the installation is complete, copy the LogoutHook folder, found in OpenCorePkg/Utilities, to a safe place and run the following command:
+
+`./Launchd.command install`
+
 ## Credits
 
 Thanks to:
