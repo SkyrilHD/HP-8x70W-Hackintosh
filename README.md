@@ -186,6 +186,10 @@ On my tester's Intel Core i7-3740QM 8570W, we got XCPM working fine. However, if
 
 For users on Sonoma, you need to enable the AppleCPUPowerManagement and AppleCPUPowerManagementClient kexts in the config.
 
+## Screenshot
+
+![About this Mac](https://github.com/SkyrilHD/HP-8x70W-Hackintosh/assets/28839925/472d73ac-5202-404c-9bb9-553c44f9e1a6)
+
 ## Credits
 
 Thanks to:
