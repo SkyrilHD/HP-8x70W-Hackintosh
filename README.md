@@ -6,11 +6,11 @@
 
 ### Before you give this EFI a try, make sure you read [this](#Generating-your-own-serial-and-Editing-ROM)!
 
-This repo includes an OpenCore EFI for the 8570W and 8770W with the 1080p TN display. **DreamColor IPS displays are NOT supported!**
+This repo includes an OpenCore EFI for the 8x70W series with the 1080p TN display. **DreamColor IPS displays are NOT supported!**
 
 ### Supported configurations:
 
-NVIDIA: Quadro K1000M-K5000M / K1100M-K5100M ([Check here](#monterey-nvidia-gpus))
+NVIDIA: Quadro K1000M-K5000M / K1100M-K5100M
 
 AMD: FirePro M4000
 
@@ -24,7 +24,7 @@ Tested on:
 | Screen | 1080p TN-Panel  | | |
 | WiFi | Intel Centrino Advanced-N 6200 | Azureware AW-CE123H (BCM94352HMB) | BCM943224HMS |
 | Bluetooth | HP BCM20702MD |
-| macOS | Monterey | Catalina | Big Sur |
+| macOS | Monterey | Sonoma | Big Sur |
 
 ## Working features
 
@@ -37,7 +37,7 @@ Tested on:
 - Docking Station
 - Ethernet
 - ExpressCard
-- GPU acceleration
+- GPU acceleration (for Monterey+, check [here](#Monterey-and-newer))
 - Keyboard
 - SD-Card (if disabling IEEE 1394)
 - Firewire / IEEE 1394 (if disabling Flash media reader)
@@ -59,31 +59,35 @@ Go to the [Releases](https://github.com/SkyrilHD/HP-8570W-Hackintosh/releases/) 
 
 There are two ways for installation:
 
-1. If you have a working macOS install, download the Installer from the App Store and make a bootable Installer with `createinstallmedia` by using this command in Terminal: 
+1. If you have a working macOS install, download the Installer from the App Store and create a bootable Installer with `createinstallmedia` by using the following command in Terminal: 
 
-    **Big Sur**: `sudo /Applications/Install\ macOS\ Big\ Sur.app/Contents/Resources/createinstallmedia --volume /Volumes/MyVolume`
+    - **Catalina**: `sudo /Applications/Install\ macOS\ Catalina.app/Contents/Resources/createinstallmedia --volume /Volumes/MyVolume`
 
-    **Monterey**: `sudo /Applications/Install\ macOS\ Monterey.app/Contents/Resources/createinstallmedia --volume /Volumes/MyVolume`
+    - **Big Sur**: `sudo /Applications/Install\ macOS\ Big\ Sur.app/Contents/Resources/createinstallmedia --volume /Volumes/MyVolume`
+
+    - **Monterey**: `sudo /Applications/Install\ macOS\ Monterey.app/Contents/Resources/createinstallmedia --volume /Volumes/MyVolume`
+
+    - **Sonoma**: `sudo /Applications/Install\ macOS\ Sonoma.app/Contents/Resources/createinstallmedia --volume /Volumes/MyVolume`
 
 2. If you are using Windows, use [macrecovery.py](https://github.com/acidanthera/OpenCorePkg/tree/master/Utilities/macrecovery) from the offical [OpenCore release package](https://github.com/acidanthera/OpenCorePkg/releases/). Follow this [guide](https://dortania.github.io/OpenCore-Install-Guide/installer-guide/winblows-install.html) to understand how it works.
 
-After you have created a bootable Installer, copy the EFI folder to the EFI partition and install as usual. After the installation, mount the EFI partition of the installed OS and copy the EFI folder to its partition.
+After creating a bootable Installer, copy the EFI folder to the EFI partition and proceed with the installation. After completing the installation, mount the EFI partition of the installed OS and copy the EFI folder to its partition.
 
 ## Generating your own serial and Editing ROM
 
-Use GenSMBIOS (https://github.com/corpnewt/GenSMBIOS) to generate a serial for MacBookPro9,1 or 10,1
+Use GenSMBIOS (https://github.com/corpnewt/GenSMBIOS) to generate a serial for MacBookPro10,1.
 
-use PlistEdit Pro or any decent plist editor to manually enter the details in the following sections of the config (as shown in the video): (SystemSerialNumber, MLB, and UUID)
+Use PlistEdit Pro or any decent plist editor to manually enter the details in the following sections of the config (as shown in the video): (SystemSerialNumber, MLB, and UUID)
 
 https://user-images.githubusercontent.com/59102649/116117179-3ea51200-a6bc-11eb-8a18-a03f7bb5bf1d.mp4
 
-You should also put in your ethernet adapter's MAC address into the ROM section.
+Additionally, put your ethernet adapter's MAC address into the ROM section.
 
 ## WiFi
 
-If you have the stock HP BCM943224HMS or a card based on the BCM94352HMB wifi chip, they will work out of the box, no need to do anything here.
+If you have the stock HP BCM943224HMS or a card based on the BCM94352HMB wifi chip, they will work out of the box, and there is no need to do anything here.
 
-Intel WiFi users will need remove AirportBrcmFixup.kext, replace it with [Airportitlwm](https://github.com/OpenIntelWireless/itlwm/releases) and do an OC snapshot with ProperTree to get WiFi working. If you want the full macOS experience with AirDrop, Handoff and all of that, replace the Intel WiFi card with a supported Broadcom one.
+Intel WiFi users will need to remove AirportBrcmFixup.kext, replace it with [Airportitlwm](https://github.com/OpenIntelWireless/itlwm/releases) and do an OC snapshot with ProperTree to get WiFi working. If you want the full macOS experience with AirDrop, Handoff and all of that, replace the Intel WiFi card with a supported Broadcom one.
 
 Recommended WiFi cards: Azureware AW-CE123H, Dell DW1550
 
@@ -129,26 +133,30 @@ Recommended WiFi cards: Azureware AW-CE123H, Dell DW1550
 
 * Smart Card: Disabled
 
-## Monterey (NVIDIA GPUs)
+## Monterey and newer
 
-For those using an NVIDIA GPU wanting to run Monterey:
+For users who wish to run Monterey or a newer version:
 
-1. Navigate to `Kernel > Misc > Security` and change `SecureBootModel` from `Enabled` to `Disabled`
+- NVIDIA
 
-2. Nagivate to `NVRAM > 7C436110-AB2A-4BBB-A880-FE41995C9F82` and change `csr-active-config` from `00000000` to `02080000`
+  After installation, it is necessary to apply the Post-Install Root Patch using [OpenCore Legacy Patcher](https://github.com/dortania/OpenCore-Legacy-Patcher/releases) to patch the NVIDIA graphics kexts back to Monterey+. Keep in mind that you'll lose System Integrity Protection and the ability to apply Delta OTA updates for doing this.
 
-After installing Monterey, you need to install the Post-Install Volume Patch using [OpenCore Legacy Patcher](https://github.com/dortania/OpenCore-Legacy-Patcher/releases) to patch the NVIDIA graphics kexts back to Monterey. Keep in mind that you'll lose System Integrity Protection and the ability to apply Delta OTA updates for doing this.
-The patch needs to be reapplied after every macOS update.
+  The patch needs to be reapplied after every macOS update.
 
-AMD users won't need to do any of the steps above, as Monterey natively supports all GCN based AMD GPUs.
+- AMD
+
+  AMD users won't need to follow the earlier mentioned steps, as Monterey natively supports all GCN-based AMD GPUs. However, starting with Ventura, you will need to install the Post-Install Root Patch.
 
 ## Credits
 
 Thanks to:
 
-- me (for wasting my time writing this, providing fixes and creating this EFI)
-- acidanthera (for making an awesome bootloader)
-- Rehabman (for fixing keyboard issues and providing patches for 8x70)
-- [TECHNIKVERBOT](https://github.com/TECHNIKVERBOT) (for the idea to do this because there were no downloads outside of China :P)
-- [HansHubertHass](https://github.com/HansHubertHass) and [Bautheile](https://github.com/Bautheile) (for being our testers)
-- [Krutav](https://forums.macrumors.com/threads/2011-imac-graphics-card-upgrade.1596614/post-30941047) (Dell vBIOS injection through OpenCore on the ROMless HP FirePro M4000)
+- myself (for wasting my time writing this, providing fixes, and creating this EFI)
+- acidanthera (for developing an awesome bootloader)
+- Rehabman (for providing patches for 8x70)
+- [TECHNIKVERBOT](https://github.com/TECHNIKVERBOT) (for suggesting this idea due to lack of downloads outside of China :P)
+- [HansHubertHass](https://github.com/HansHubertHass) and [Bautheile](https://github.com/Bautheile) (for their valuable testing)
+- [Krutav](https://forums.macrumors.com/threads/2011-imac-graphics-card-upgrade.1596614/post-30941047) (for Dell vBIOS injection through OpenCore on the ROMless HP FirePro M4000)
+- [onejay09](https://www.insanelymac.com/forum/topic/323010-please-help-me-fix-brightness-control-nvidia-graphics-only-laptop/) (for providing fixes for backlight control on NVIDIA cards)
+- [ubihazard](https://github.com/ubihazard) (for [porting](https://github.com/ubihazard/OpenCorePkg-ProBook) RehabMan's ProBook 4x30s EFI modules to OpenCore)
+- [5T33Z0](https://github.com/5T33Z0) (for enabling [XCPM](https://github.com/5T33Z0/OC-Little-Translated/tree/main/01_Adding_missing_Devices_and_enabling_Features/CPU_Power_Management/Enabling_XCPM_on_Ivy_Bridge_CPUs) on Catalina+)
