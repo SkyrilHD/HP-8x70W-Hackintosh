@@ -175,6 +175,17 @@ Once the installation is complete, copy the LogoutHook folder, found in OpenCore
 
 `./Launchd.command install`
 
+## Issues with Power Management
+
+On my tester's Intel Core i7-3740QM 8570W, we got XCPM working fine. However, if you encounter any issues regarding Power Management, try following these steps:
+
+1. Disable SSDT-PLUG from the config
+2. Enable the two keys found in config.plist > Delete
+3. Disable AppleXcpmCfgLock in config.plist > Kernel > Quirks
+4. Enable AppleCpuPmLock in config.plist > Kernel > Quirks
+
+For users on Sonoma, you need to enable the AppleCPUPowerManagement and AppleCPUPowerManagementClient kexts in the config.
+
 ## Credits
 
 Thanks to:
