@@ -22,9 +22,9 @@ Tested on:
 | GPU | AMD FirePro M4000 | Nvidia Quadro K1000M | Nvidia Quadro K1000M | 
 | RAM | 8 GB 1600 MHz DDR3 | 8 GB 1600 MHz DDR3 | 32 GB 1600 MHz DDR3 |
 | Screen | 1080p TN-Panel  | | |
-| WiFi | Intel Centrino Advanced-N 6200 | Azureware AW-CE123H (BCM94352HMB) | BCM943224HMS |
+| WiFi | Intel Centrino Advanced-N 6200 | Azureware AW-CE123H (BCM94352HMB) | Dell DW1530 (BCM94352HMB) |
 | Bluetooth | HP BCM20702MD |
-| macOS | Monterey | Sonoma | Big Sur |
+| macOS | Monterey | Sonoma | Ventura |
 
 ## Working features
 
@@ -85,9 +85,11 @@ Additionally, put your ethernet adapter's MAC address into the ROM section.
 
 ## WiFi
 
-If you have the stock HP BCM943224HMS or a card based on the BCM94352HMB wifi chip, they will work out of the box, and there is no need to do anything here.
+Both the stock HP BCM943224HMS or a card based on the BCM94352HMB wifi chip, they will work out of the box, and there is no need to do anything here.
 
-Intel WiFi users will need to remove AirportBrcmFixup.kext, replace it with [Airportitlwm](https://github.com/OpenIntelWireless/itlwm/releases) and do an OC snapshot with ProperTree to get WiFi working. If you want the full macOS experience with AirDrop, Handoff and all of that, replace the Intel WiFi card with a supported Broadcom one.
+**Note for Monterey and newer:** The HP BCM943224HMS may cause issues preventing the system to boot but works just fine on Big Sur and older. Replace it with the BCM94352HMB in that case.
+
+**Intel users:** Remove AirportBrcmFixup.kext, replace it with [Airportitlwm](https://github.com/OpenIntelWireless/itlwm/releases) and do an OC snapshot with ProperTree to get WiFi working. If you want the full macOS experience with AirDrop, Handoff and all of that, replace the Intel WiFi card with a supported Broadcom one.
 
 Recommended WiFi cards: Azureware AW-CE123H, Dell DW1550
 
