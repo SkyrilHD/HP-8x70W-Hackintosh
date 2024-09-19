@@ -16,7 +16,7 @@ AMD: FirePro M4000
 
 Tested on:
 
-| Specs | 8770W ([@HansHubertHass](https://twitter.com/MacGen2)) | 8570W ([@HansHubertHass](https://twitter.com/MacGen2)) | 8570W ([@Bautheile](https://github.com/Bautheile)) |
+| Specs | 8770W ([@HansHubertHass](https://twitter.com/MacGen2)) (dead) | 8570W ([@HansHubertHass](https://twitter.com/MacGen2)) | 8570W ([@Bautheile](https://github.com/Bautheile)) |
 | -- | -- | -- | -- |
 | CPU | Intel Core i5-3360M | Intel Core i7-3740QM | Intel Core i7-3840QM |
 | GPU | AMD FirePro M4000 | Nvidia Quadro K1000M | Nvidia Quadro K1000M | 
