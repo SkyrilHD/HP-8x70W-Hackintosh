@@ -167,9 +167,8 @@ If you get an error, it indicates that your 8x70W may have a faulty/degraded NVR
 
 1. Enable DisableVariableWrite in `config.plist > Booter > Quirks`
 2. Enable LegacyOverwrite in `config.plist > NVRAM`
-3. Add OpenVariableRuntimeDxe from [OpenCorePkg](https://github.com/acidanthera/OpenCorePkg/releases/)
-4. Add OpenVariableRuntimeDxe before OpenRuntime in the config
-5. Enable LoadEarly on OpenVariableRuntimeDxe and OpenRuntime
+3. Enable OpenVariableRuntimeDxe in `config.plist > UEFI > Drivers`
+4. Set `LoadEarly` on OpenVariableRuntimeDxe and OpenRuntime to `true`
 
 Now, you can proceed with the installation.
 
